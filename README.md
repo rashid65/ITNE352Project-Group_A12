@@ -1,1 +1,1 @@
-# ITNE352-Project
+# Client-Server News Application
