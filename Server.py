@@ -2,15 +2,9 @@ import socket
 import threading
 import requests
 import json
-# from newsapi import NewsApiClient
+from newsapi import NewsApiClient
 
-# newsapi = NewsApiClient(api_key="7558a150954e4dcaafa560b8d6f689c5")
-
-params = {
-    'access_key' : '7558a150954e4dcaafa560b8d6f689c5'
-    # 'pageSize' : '15'
-}
-# api_result = requests.get('',params)
+newsapi = NewsApiClient(api_key="7558a150954e4dcaafa560b8d6f689c5")
 
 def ServeClient(Sock_a, SockName): # Thread 
     print("connected to ", SockName , "\n")
