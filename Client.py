@@ -143,7 +143,7 @@ def MainClient():
                     if choice_Source_Language < "1" or choice_Source_Language > "2":
                         print("please chose a valid number")
                     else:
-                        cs.sendall(choice_Source_Language,encode('ascii'))
+                        cs.sendall(choice_Source_Language.encode('ascii'))
 
 
                 if choice_Source == "5":
