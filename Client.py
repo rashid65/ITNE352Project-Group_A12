@@ -21,6 +21,8 @@ def MainClient():
             else:
                     cs.sendall(choice.encode('ascii'))
 
+         #===============================================Headline============================================================
+
             if choice == "1":
 
                 print("\n~~~Search Headlines Menu~~~\n")
@@ -30,14 +32,59 @@ def MainClient():
                 print("4- List all new headlines")
                 print("5- Back to main menu")
 
-                choiceA = input("\nChoose an option:\n")
-                if choiceA < "1" or choiceA > "5":
+                choice_Headline = input("\nChoose an option:\n")
+                if choice_Headline < "1" or choice_Headline > "5":
                     print("Please choose a valid number")
                 else:
-                    cs.sendall(choiceA.encode('ascii'))
-                if choiceA == "5":
-                    continue
+                    cs.sendall(choice_Headline.encode('ascii'))
+                
+                # Keyword option (Headlines)================================================================================
+                if choice_Headline == "1":
+                    choice_Headline_Keyword = input("Enter the Keyword you want to search for: ")
+                
+                # Categories option (Headlines)====================================================================================
+                if choice_Headline == "2":
+                    print("====== availble Categories ======")
+                    print("1- Business")
+                    print("2- Entertainment")
+                    print("3- General")
+                    print("4- Health")
+                    print("5- Science")
+                    print("6- Sports")
+                    print("7- Technology")
+                    choice_Headline_Catagory = input("\nChoose a Catagory:\n")
+                    if choice_Headline_Catagory < "1" or choice_Headline_Catagory > "7":
+                        print("Please choose a valid number")
+                    else:
+                        cs.sendall(choice_Headline_Catagory.encode('ascii'))
 
+                # country option (Headlines)=====================================================================================
+                if choice_Headline == "3":
+                    print("====== availble Countries ======")
+                    print("1- Australia (au)")
+                    print("2- New Zealand (NZ)")
+                    print("3- Canada (ca)")
+                    print("4- United Arab Emirates (ae)")
+                    print("5- Saudi Arabia (sa)")
+                    print("6- United Kingdom (gb)")
+                    print("7- United States of America (us)")
+                    print("8- Egypt (eg)")
+                    print("9- Morocco (ma)")
+                    choice_Headline_Country = input("\nChoose a Country:\n")
+                    if choice_Headline_Country < "1" or choice_Headline_Country > "9":
+                        print("Please choose a valid number")
+                    else:
+                        cs.sendall(choice_Headline_Country.encode('ascii'))
+
+                # top Headlines option=========================================================================================
+                if choice_Headline == "4":
+                    print("requesting top headlines from the server...")
+                    # do smth here send to server ?
+
+
+                if choice_Headline == "5":
+                    continue
+            #=====================================********SOURCE*********============================================================
             elif choice == "2":
 
                 print("\n~~~List of Sources Menu~~~\n")
@@ -46,14 +93,60 @@ def MainClient():
                 print("3- Search by language")
                 print("4- List all")
                 print("5- Back to main menu")
+                choice_Source = input("\nChoose an option:\n")
 
-                choiceB = input("\nChoose an option:\n")
-
-                if choiceB < "1" or choiceB > "5":
+                if choice_Source < "1" or choice_Source > "5":
                     print("Please choose a valid number")
                 else:
-                    cs.sendall(choiceB.encode('ascii'))
-                if choiceB == "5":
+                    cs.sendall(choice_Source.encode('ascii'))
+                
+                # Categories option (Source)================================================================================
+                if choice_Source == "1":
+                    print("====== availble Categories ======")
+                    print("1- Business")
+                    print("2- Entertainment")
+                    print("3- General")
+                    print("4- Health")
+                    print("5- Science")
+                    print("6- Sports")
+                    print("7- Technology")
+                    choice_Source_Catagory = input("\nChoose a Catagory:\n")
+                    if choice_Source_Catagory < "1" or choice_Source_Catagory > "7":
+                        print("Please choose a valid number")
+                    else:
+                        cs.sendall(choice_Source_Catagory.encode('ascii'))
+                
+                # country option (Source)========================================================================================
+                if choice_Source == "2":
+                    print("====== availble Countries ======")
+                    print("1- Australia (au)")
+                    print("2- New Zealand (NZ)")
+                    print("3- Canada (ca)")
+                    print("4- United Arab Emirates (ae)")
+                    print("5- Saudi Arabia (sa)")
+                    print("6- United Kingdom (gb)")
+                    print("7- United States of America (us)")
+                    print("8- Egypt (eg)")
+                    print("9- Morocco (ma)")
+                    choice_Source_Country = input("\nChoose a Country:\n")
+                    if choice_Source_Country < "1" or choice_Source_Country > "9":
+                       print("Please choose a valid number")
+                    else:
+                        cs.sendall(choice_Source_Country.encode('ascii'))
+
+                #Language option (Source)=================================================================================
+                if choice_Source == "3":
+                    print("Available Languages")
+                    print("1- Arabic (ar)")
+                    print("2- English (en)")
+                    choice_Source_Language = input("\nChoose a Language:\n")
+                    if choice_Source_Language < "1" or choice_Source_Language > "2":
+                        print("please chose a valid number")
+                    else:
+                        cs.sendall(choice_Source_Language,encode('ascii'))
+
+
+                if choice_Source == "5":
                     continue
 
             elif choice == "3":

@@ -6,6 +6,20 @@ from newsapi import NewsApiClient
 
 newsapi = NewsApiClient(api_key="7558a150954e4dcaafa560b8d6f689c5")
 
+def NEWHeadlines():
+    GETMsg = f'https://newsapi.org/v2/top-headlines?&apiKey={"7558a150954e4dcaafa560b8d6f689c5"}' #eddited
+    response = requests.get(GETMsg)
+    return response.json()
+
+def NEWSources():
+    GETMsg = f'https://newsapi.org/v2/sources?apiKey={"7558a150954e4dcaafa560b8d6f689c5"}'
+    response = requests.get(GETMsg)
+    return response.json()
+
+def savejson(fileName, data):
+    with open(fileName, 'w') as f:
+        json.dump(data, f, indent=4)
+
 def ServeClient(Sock_a, SockName): # Thread 
     print("connected to ", SockName , "\n")
     try:
@@ -23,10 +37,10 @@ def ServeClient(Sock_a, SockName): # Thread
                     continue
 
             elif MenuChoice == "2":
-                SorceChoice = Sock_a.recv(1024).decode('ascii')
-                print(f"i got ur message {ClientName} ur soruce choice number {SorceChoice}")
+                SoruceChoice = Sock_a.recv(1024).decode('ascii')
+                print(f"i got ur message {ClientName} ur soruce choice number {SoruceChoice}")
                 #API code for sources
-                if SorceChoice == "5":
+                if SoruceChoice == "5":
                     continue
     
     finally:
