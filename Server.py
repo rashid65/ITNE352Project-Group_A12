@@ -1,12 +1,40 @@
 import socket
 import threading
+import requests
+import json
+# from newsapi import NewsApiClient
+
+# newsapi = NewsApiClient(api_key="7558a150954e4dcaafa560b8d6f689c5")
+
+params = {
+    'access_key' : '7558a150954e4dcaafa560b8d6f689c5'
+    # 'pageSize' : '15'
+}
+# api_result = requests.get('',params)
 
 def ServeClient(Sock_a, SockName): # Thread 
     print("connected to ", SockName , "\n")
     try:
         ClientName = Sock_a.recv(1024).decode('ascii')
         print("the client name is ", ClientName)
-        
+
+        while True:
+           
+            MenuChoice = Sock_a.recv(1024).decode('ascii') #here it will receive either 1 for headlines or 2 for sources
+            if MenuChoice == "1":
+                HeadlineChoice = Sock_a.recv(1024).decode('ascii')
+                print(f"i got ur message {ClientName} ur headline choice number {HeadlineChoice}")
+                #API code for headlines
+                if HeadlineChoice == "5":
+                    continue
+
+            elif MenuChoice == "2":
+                SorceChoice = Sock_a.recv(1024).decode('ascii')
+                print(f"i got ur message {ClientName} ur soruce choice number {SorceChoice}")
+                #API code for sources
+                if SorceChoice == "5":
+                    continue
+    
     finally:
         Sock_a.close()
         print("Connection closed with", ClientName)

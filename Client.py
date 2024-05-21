@@ -18,7 +18,9 @@ def MainClient():
 
             if choice < "1" or choice > "3":
                 print("Please choose a valid number")
-            
+            else:
+                    cs.sendall(choice.encode('ascii'))
+
             if choice == "1":
 
                 print("\n~~~Search Headlines Menu~~~\n")
@@ -29,8 +31,10 @@ def MainClient():
                 print("5- Back to main menu")
 
                 choiceA = input("\nChoose an option:\n")
-                if choiceA < "1" or choiceA > "3":
+                if choiceA < "1" or choiceA > "5":
                     print("Please choose a valid number")
+                else:
+                    cs.sendall(choiceA.encode('ascii'))
                 if choiceA == "5":
                     continue
 
@@ -45,8 +49,10 @@ def MainClient():
 
                 choiceB = input("\nChoose an option:\n")
 
-                if choiceB < "1" or choiceB > "3":
+                if choiceB < "1" or choiceB > "5":
                     print("Please choose a valid number")
+                else:
+                    cs.sendall(choiceB.encode('ascii'))
                 if choiceB == "5":
                     continue
 
