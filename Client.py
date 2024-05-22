@@ -101,10 +101,10 @@ def MainClient():
                     print("5- Back to main menu")
                 choice_Source = input("\nChoose an option:\n")
 
-                        if int(choice_Source) < 1 or int(choice_Source) > 5:
-                        print("\nPlease choose a valid number")
-                    else:
-                        cs.sendall(choice_Source.encode('ascii'))
+                if int(choice_Source) < 1 or int(choice_Source) > 5:
+                    print("\nPlease choose a valid number")
+                else:
+                    cs.sendall(choice_Source.encode('ascii'))
                     
                 # Categories option (Source)================================================================================
                 if choice_Source == "1":
