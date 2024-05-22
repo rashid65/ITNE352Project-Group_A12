@@ -9,14 +9,14 @@ def MainClient():
 
         quit = False
         while quit == False:
-            print("\n~~~Menu~~~")
+            print("\n    ~~~Menu~~~")
             print("1- Search Headlines")
             print("2- List of Soarces")
             print("3- Quit")
 
             choice = input("\nChoose an option:\n")
 
-            if choice < "1" or choice > "3":
+            if int(choice) < 1 or int(choice) > 3:
                 print("Please choose a valid number")
             else:
                     cs.sendall(choice.encode('ascii'))
@@ -25,19 +25,23 @@ def MainClient():
 
             if choice == "1":
 
-                print("\n~~~Search Headlines Menu~~~\n")
-                print("1- Search by keywords")
-                print("2- Search by category")
-                print("3- Search by country")
-                print("4- List all new headlines")
-                print("5- Back to main menu")
+                goback = False
+                while goback == False:
+                    print("\n~~~Search Headlines Menu~~~")
+                    print("1- Search by keywords")
+                    print("2- Search by category")
+                    print("3- Search by country")
+                    print("4- List all new headlines")
+                    print("5- Back to main menu")
 
-                choice_Headline = input("\nChoose an option:\n")
-                if choice_Headline < "1" or choice_Headline > "5":
-                    print("Please choose a valid number")
-                else:
-                    cs.sendall(choice_Headline.encode('ascii'))
-                
+                    choice_Headline = input("\nChoose an option:\n")
+                    
+                    if int(choice_Headline) < 1 or int(choice_Headline) > 5:
+                        print("\nPlease choose a valid number")
+                    else:
+                        cs.sendall(choice_Headline.encode('ascii'))
+
+                    
                 # Keyword option (Headlines)================================================================================
                 if choice_Headline == "1":
                     choice_Headline_Keyword = input("Enter the Keyword you want to search for: ")
@@ -83,23 +87,25 @@ def MainClient():
 
 
                 if choice_Headline == "5":
-                    continue
+                        goback = True
             #=====================================********SOURCE*********============================================================
             elif choice == "2":
 
-                print("\n~~~List of Sources Menu~~~\n")
-                print("1- Search by category")
-                print("2- Search by country")
-                print("3- Search by language")
-                print("4- List all")
-                print("5- Back to main menu")
+                goback = False
+                while goback == False:
+                    print("\n~~~List of Sources Menu~~~")
+                    print("1- Search by category")
+                    print("2- Search by country")
+                    print("3- Search by language")
+                    print("4- List all")
+                    print("5- Back to main menu")
                 choice_Source = input("\nChoose an option:\n")
 
-                if choice_Source < "1" or choice_Source > "5":
-                    print("Please choose a valid number")
-                else:
-                    cs.sendall(choice_Source.encode('ascii'))
-                
+                        if int(choice_Source) < 1 or int(choice_Source) > 5:
+                        print("\nPlease choose a valid number")
+                    else:
+                        cs.sendall(choice_Source.encode('ascii'))
+                    
                 # Categories option (Source)================================================================================
                 if choice_Source == "1":
                     print("====== availble Categories ======")
@@ -147,7 +153,7 @@ def MainClient():
 
 
                 if choice_Source == "5":
-                    continue
+                        goback = True
 
             elif choice == "3":
 
