@@ -25,12 +25,16 @@ def ServeClient(Sock_a, SockName): # Thread
     try:
         ClientName = Sock_a.recv(1024).decode('ascii')
         print("the client name is ", ClientName)
-
-        while True:
-           
+        Back = True
+        while Back:
+            Back = False
             MenuChoice = Sock_a.recv(1024).decode('ascii') #here it will receive either 1 for headlines or 2 for sources
             if MenuChoice == "1":
                 HeadlineChoice = Sock_a.recv(1024).decode('ascii')
+                if HeadlineChoice == "5":
+                    Back = True
+                    continue
+                
                 print(f"i got ur message {ClientName} ur headline choice number {HeadlineChoice}")
                 #API code for headlines
                 if HeadlineChoice == "5":
