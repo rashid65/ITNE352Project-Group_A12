@@ -6,13 +6,13 @@ from newsapi import NewsApiClient
 
 newsapi = NewsApiClient(api_key="7558a150954e4dcaafa560b8d6f689c5")
 
-def NEWHeadlines():
-    GETMsg = f'https://newsapi.org/v2/top-headlines?&apiKey={"7558a150954e4dcaafa560b8d6f689c5"}' #eddited
-    response = requests.get(GETMsg)
+def NEWHeadlines(): #changed it to us??
+    url = f'https://newsapi.org/v2/top-headlines?country=us&pageSize=15&apiKey={"7558a150954e4dcaafa560b8d6f689c5"}'
+    response = requests.get(url)
     return response.json()
 
 def NEWSources():
-    GETMsg = f'https://newsapi.org/v2/sources?apiKey={"7558a150954e4dcaafa560b8d6f689c5"}'
+    GETMsg = f'https://newsapi.org/v2/sources?pageSize=15&apiKey={"7558a150954e4dcaafa560b8d6f689c5"}'
     response = requests.get(GETMsg)
     return response.json()
 
@@ -21,12 +21,12 @@ def savejson(fileName, data):
         json.dump(data, f, indent=4)
 
 def Headline_KeyWord(Keyword): #tested worked fine
-    GETMsg = f'https://newsapi.org/v2/top-headlines?q={Keyword}&totalResults=15&apiKey={"7558a150954e4dcaafa560b8d6f689c5"}'
+    GETMsg = f'https://newsapi.org/v2/top-headlines?q={Keyword}&pageSize=15&apiKey={"7558a150954e4dcaafa560b8d6f689c5"}'
     response = requests.get(GETMsg)
     return response.json()
 
 def Headline_category(category): #tested worked fine
-    GETMsg = f'https://newsapi.org/v2/top-headlines?category={category}&totalResults=15&apiKey={"7558a150954e4dcaafa560b8d6f689c5"}'
+    GETMsg = f'https://newsapi.org/v2/top-headlines?category={category}&pageSize=15&apiKey={"7558a150954e4dcaafa560b8d6f689c5"}'
     response = requests.get(GETMsg)
     return response.json()
 
@@ -34,6 +34,13 @@ def WhichCateWasChosen(Num):
     Num = int(Num) - 1
     categoryList = ["business", "entertainment", "general", "health", "science", "sports", "technology"]
     return categoryList[Num]
+
+def Headline_country(countryNum):
+    countries = ["au","nz","ca","ae","sa","gb","us","eg","ma"]
+    country = countries[int(countryNum)-1]
+    GETMsg = f'https://newsapi.org/v2/top-headlines?country={country}&pageSize=15&apiKey={"7558a150954e4dcaafa560b8d6f689c5"}'
+    response = requests.get(GETMsg)
+    return response.json()
 
 def ServeClient(Sock_a, SockName): # Thread 
     print("connected to ", SockName , "\n")
@@ -61,16 +68,23 @@ def ServeClient(Sock_a, SockName): # Thread
                         Data = Headline_category(ClientCat)
                         fileName = f'A12_{ClientName}_SearchByCategory'
                         savejson(fileName,Data)
+                    
+                    if HeadlineChoice == "3":
+                        Clientcountry = Sock_a.recv(1024).decode('ascii')
+                        Data = Headline_country(Clientcountry)
+                        fileName = f'A12_{ClientName}_SearchByCountry'
+                        savejson(fileName,Data)
+
+                    if HeadlineChoice == "4":
+                        data = NEWHeadlines()
+                        fileName = f'A12_{ClientName}_ListAllHeadlines'
+                        savejson(fileName,data)
 
                     if HeadlineChoice == "5":
                         Back = True
                         continue
-                    
                     print(f"i got ur message {ClientName} ur headline choice number {HeadlineChoice}")
-                    #API code for headlines
-                    if HeadlineChoice == "5":
-                        continue
-
+                #---------------------------------------SOURCE---------------------------------------------------------------------------
                 elif MenuChoice == "2":
                     SoruceChoice = Sock_a.recv(1024).decode('ascii')
                     if SoruceChoice == "5":
