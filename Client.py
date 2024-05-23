@@ -47,6 +47,7 @@ def MainClient():
                     
                     if choice_Headline == "1":                                                     # Keyword option (Headlines)
                         choice_Headline_Keyword = input("Enter the Keyword you want to search for: ")
+                        cs.sendall(choice_Headline_Keyword.encode('ascii'))
                     elif choice_Headline == "2":                                                   # Categories option (Headlines)
 
                         print("====== availble Categories ======")
@@ -163,6 +164,7 @@ def MainClient():
 
             elif choice == "3":
                 quit = True
+                cs.sendall(choice.encode('ascii'))
                 cs.close()
                 break
  

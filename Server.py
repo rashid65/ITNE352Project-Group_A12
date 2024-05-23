@@ -20,41 +20,67 @@ def savejson(fileName, data):
     with open(fileName, 'w') as f:
         json.dump(data, f, indent=4)
 
-def Headline_KeyWord(Keyword): #not tested
-    GETMsg = f'https://newsapi.org/v2/top-headlines?category={Keyword}&apiKey={"7558a150954e4dcaafa560b8d6f689c5"}'
+def Headline_KeyWord(Keyword): #tested worked fine
+    GETMsg = f'https://newsapi.org/v2/top-headlines?q={Keyword}&totalResults=15&apiKey={"7558a150954e4dcaafa560b8d6f689c5"}'
     response = requests.get(GETMsg)
     return response.json()
 
-def Headline_category(category): #not tested
-    GETMsg = f'https://newsapi.org/v2/top-headlines?q={category}&apiKey={"7558a150954e4dcaafa560b8d6f689c5"}'
+def Headline_category(category): #tested worked fine
+    GETMsg = f'https://newsapi.org/v2/top-headlines?category={category}&totalResults=15&apiKey={"7558a150954e4dcaafa560b8d6f689c5"}'
     response = requests.get(GETMsg)
     return response.json()
+
+def WhichCateWasChosen(Num):
+    Num = int(Num) - 1
+    categoryList = ["business", "entertainment", "general", "health", "science", "sports", "technology"]
+    return categoryList[Num]
 
 def ServeClient(Sock_a, SockName): # Thread 
     print("connected to ", SockName , "\n")
     try:
         ClientName = Sock_a.recv(1024).decode('ascii')
         print("the client name is ", ClientName)
-        Back = True
-        while Back:
-            Back = False
-            MenuChoice = Sock_a.recv(1024).decode('ascii') #here it will receive either 1 for headlines or 2 for sources
-            if MenuChoice == "1":
-                HeadlineChoice = Sock_a.recv(1024).decode('ascii')
-                if HeadlineChoice == "5":
-                    Back = True
-                    continue
-                
-                print(f"i got ur message {ClientName} ur headline choice number {HeadlineChoice}")
-                #API code for headlines
-                if HeadlineChoice == "5":
-                    continue
+        Noquit = True
+        while Noquit:
+            Back = True
+            while Back:
+                Back = False
+                MenuChoice = Sock_a.recv(1024).decode('ascii') #here it will receive either 1 for headlines or 2 for sources
+                if MenuChoice == "1":
+                    HeadlineChoice = Sock_a.recv(1024).decode('ascii')
 
-            elif MenuChoice == "2":
-                SoruceChoice = Sock_a.recv(1024).decode('ascii')
-                print(f"i got ur message {ClientName} ur soruce choice number {SoruceChoice}")
-                #API code for sources
-                if SoruceChoice == "5":
+                    if HeadlineChoice == "1":
+                        ClientKeyword = Sock_a.recv(1024).decode('ascii')
+                        Data = Headline_KeyWord(ClientKeyword)
+                        fileName = f'A12_{ClientName}_SearchByKeyword'
+                        savejson(fileName,Data)
+                    
+                    if HeadlineChoice == "2":
+                        ClientCatNum = Sock_a.recv(1024).decode('ascii')
+                        ClientCat = WhichCateWasChosen(ClientCatNum)
+                        Data = Headline_category(ClientCat)
+                        fileName = f'A12_{ClientName}_SearchByCategory'
+                        savejson(fileName,Data)
+
+                    if HeadlineChoice == "5":
+                        Back = True
+                        continue
+                    
+                    print(f"i got ur message {ClientName} ur headline choice number {HeadlineChoice}")
+                    #API code for headlines
+                    if HeadlineChoice == "5":
+                        continue
+
+                elif MenuChoice == "2":
+                    SoruceChoice = Sock_a.recv(1024).decode('ascii')
+                    if SoruceChoice == "5":
+                        Back = True
+                        continue
+                    #API code for sources
+
+                    print(f"i got ur message {ClientName} ur soruce choice number {SoruceChoice}")
+                elif MenuChoice == "3":
+                    Noquit = False
                     continue
     
     finally:

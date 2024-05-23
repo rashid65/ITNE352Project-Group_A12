@@ -1,0 +1,266 @@
+{
+    "status": "ok",
+    "totalResults": 161,
+    "articles": [
+        {
+            "source": {
+                "id": "argaam",
+                "name": "Argaam"
+            },
+            "author": "Argaam",
+            "title": "\u0643\u0645 \u0633\u062a\u0643\u0644\u0641 \u0645\u0642\u062a\u0631\u062d\u0627\u062a \u062a\u0631\u0627\u0645\u0628 \u0644\u0644\u062a\u0639\u0631\u064a\u0641\u0627\u062a \u0627\u0644\u062c\u0645\u0631\u0643\u064a\u0629 \u0627\u0644\u0623\u0633\u0631 \u0627\u0644\u0623\u0645\u0631\u064a\u0643\u064a\u0629 \u0643\u0644 \u0639\u0627\u0645\u061f",
+            "description": "\u0623\u0638\u0647\u0631\u062a \u0648\u0631\u0642\u0629 \u0628\u062d\u062b\u064a\u0629 \u0646\u0634\u0631\u0647\u0627 \u0645\u0639\u0647\u062f \"\u0628\u064a\u062a\u0631\u0633\u0648\u0646\" \u0644\u0644\u0627\u0642\u062a\u0635\u0627\u062f \u0627\u0644\u062f\u0648\u0644\u064a \u0623\u0646 \u0645\u0642\u062a\u0631\u062d\u0627\u062a \u0627\u0644\u0631\u0626\u064a\u0633 \u0627\u0644\u0623\u0645\u0631\u064a\u0643\u064a \u0627\u0644\u0633\u0627\u0628\u0642 \"\u062f\u0648\u0646\u0627\u0644\u062f \u062a\u0631\u0627\u0645\u0628\" \u0627\u0644\u062a\u062c\u0627\u0631\u064a\u0629 \u063a\u064a\u0631 \u0627\u0644\u0645\u0633\u0628\u0648\u0642\u0629 \u0642\u062f \u062a\u0644\u062d\u0642 \u0623\u0636\u0631\u0627\u0631\u0627\u064b \u062c\u0627\u0646\u0628\u064a\u0629 \u0643\u0628\u064a\u0631\u0629 \u0628\u0627\u0644\u0627\u0642\u062a\u0635\u0627\u062f \u0627\u0644\u0623\u0645\u0631\u064a\u0643\u064a \u0648\u062a\u0643\u0644\u0641 \u0627\u0644\u0645\u0633\u062a\u0647\u0644\u0643\u064a\u0646 \u0645\u0627 \u0644\u0627 \u064a\u0642\u0644 \u0639\u0646 500 \u0645\u0644\u064a\u0627\u0631 \u062f\u0648\u0644\u0627\u0631 \u0633\u0646\u0648\u064a\u064b\u0627 \u0623\u0648 1.8% \u0645\u0646 \u0627\u0644\u0646\u0627\u062a\u062c \u0627\u0644\u0645\u062d\u0644\u064a \u0627\u0644\u0625\u062c\u0645\u0627\u0644\u064a\u2026",
+            "url": "https://www.argaam.com/ar/article/articledetail/id/1729760",
+            "urlToImage": "https://argaamplus.s3.amazonaws.com/555ca00d-25d1-42ad-8a5a-9429c0251494.png",
+            "publishedAt": "2024-05-22T12:00:00Z",
+            "content": null
+        },
+        {
+            "source": {
+                "id": "bild",
+                "name": "Bild"
+            },
+            "author": null,
+            "title": "10:56 Uhr<!---->VfB StuttgartStuttgart-Boss Wehrle\u201eUnser Spielertunnel ist einzigartig\u201c",
+            "description": null,
+            "url": "https://www.bild.de/sport/fussball/vfb-stuttgart-boss-wehrle-unser-spielertunnel-ist-einzigartig-664c97c41e258259cdd31e4d",
+            "urlToImage": null,
+            "publishedAt": "2024-05-22T09:07:24.4063651Z",
+            "content": "{\"en\":{\"access_disabled\":\"Internet Access has been disabled on this device\",\"code\":\"Code\",\"custom_block_list\":\"it is on a custom block list\",\"email\":\"Email\",\"file_ext_blocked\":\"the file extension is \u2026 [+5241 chars]"
+        },
+        {
+            "source": {
+                "id": "google-news-in",
+                "name": "Google News (India)"
+            },
+            "author": "News18",
+            "title": "'Jaanta Hai Tera Baap\u2026': Zomato CEO Recounts Father's Words, PM Modi Says 'Surname Doesn't Matter' - News18",
+            "description": null,
+            "url": "https://news.google.com/rss/articles/CBMigwFodHRwczovL3d3dy5uZXdzMTguY29tL2luZGlhL2phYW50YS1oYWktdGVyYS1iYWFwLXpvbWF0by1jZW8tcmVjb3VudHMtZmF0aGVycy13b3Jkcy1wbS1tb2RpLXNheXMtc3VybmFtZS1kb2VzbnQtbWF0dGVyLTg4OTk3MTYuaHRtbNIBhwFodHRwczovL3d3dy5uZXdzMTguY29tL2FtcC9pbmRpYS9qYWFudGEtaGFpLXRlcmEtYmFhcC16b21hdG8tY2VvLXJlY291bnRzLWZhdGhlcnMtd29yZHMtcG0tbW9kaS1zYXlzLXN1cm5hbWUtZG9lc250LW1hdHRlci04ODk5NzE2Lmh0bWw?oc=5",
+            "urlToImage": null,
+            "publishedAt": "2024-05-22T09:00:53+00:00",
+            "content": null
+        },
+        {
+            "source": {
+                "id": "rtl-nieuws",
+                "name": "RTL Nieuws"
+            },
+            "author": "RTL Nieuws",
+            "title": "Groep van 140.000 Nederlanders harkt 15 procent van al het inkomen binnen",
+            "description": "De 1 procent Nederlanders met de hoogste inkomens toucheert samen 15 procent van het totale inkomen \u00e0 825 miljard euro. Dat danken ze aan het feit dat ze relatief veel minder belasting betalen dan de 99 procent van de volwassenen die g\u00e9\u00e9n topinkomen hebben.",
+            "url": "https://www.rtlnieuws.nl/economie/artikel/5451658/onderzoek-cpb-groep-met-absolute-topinkomens",
+            "urlToImage": "https://redactie.rtl.nl/sites/default/files/content/images/2024/05/22/ANP-349875808.jpg?itok=yjfWWY_d&width=512&height=288&impolicy=semi_dynamic",
+            "publishedAt": "2024-05-22T08:52:18.3873886Z",
+            "content": "De 1 procent Nederlanders met de hoogste inkomens toucheert samen 15 procent van het totale inkomen \u00e0 825 miljard euro. Dat danken ze aan het feit dat ze relatief veel minder belasting betalen dan de\u2026 [+2950 chars]"
+        },
+        {
+            "source": {
+                "id": "rt",
+                "name": "RT"
+            },
+            "author": "\u0421\u0432\u044f\u0442\u043e\u0441\u043b\u0430\u0432 \u041a\u043d\u044f\u0437\u0435\u0432, \u0415\u043a\u0430\u0442\u0435\u0440\u0438\u043d\u0430 \u041a\u0438\u0439\u043a\u043e",
+            "title": "\u00ab\u0421\u0444\u0435\u0440\u044b \u0432\u043b\u0438\u044f\u043d\u0438\u044f \u043c\u043e\u0436\u043d\u043e \u0431\u044b\u043b\u043e \u0440\u0430\u0437\u0434\u0435\u043b\u0438\u0442\u044c\u00bb: \u0438\u0441\u0442\u043e\u0440\u0438\u043a \u2014 \u043e \u0444\u043e\u0440\u043c\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0438 \u0441\u043e\u044e\u0437\u0430 \u043c\u0435\u0436\u0434\u0443 \u043d\u0430\u0446\u0438\u0441\u0442\u0441\u043a\u043e\u0439 \u0413\u0435\u0440\u043c\u0430\u043d\u0438\u0435\u0439 \u0438 \u0444\u0430\u0448\u0438\u0441\u0442\u0441\u043a\u043e\u0439 \u0418\u0442\u0430\u043b\u0438\u0435\u0439",
+            "description": "85 \u043b\u0435\u0442 \u043d\u0430\u0437\u0430\u0434, 22 \u043c\u0430\u044f 1939 \u0433\u043e\u0434\u0430, \u0431\u044b\u043b \u043f\u043e\u0434\u043f\u0438\u0441\u0430\u043d \u00ab\u041f\u0430\u043a\u0442 \u043e \u0434\u0440\u0443\u0436\u0431\u0435 \u0438 \u0441\u043e\u044e\u0437\u0435 \u043c\u0435\u0436\u0434\u0443 \u0413\u0435\u0440\u043c\u0430\u043d\u0438\u0435\u0439 \u0438 \u0418\u0442\u0430\u043b\u0438\u0435\u0439\u00bb (\u0438\u0437\u0432\u0435\u0441\u0442\u0435\u043d \u0442\u0430\u043a\u0436\u0435 \u043a\u0430\u043a  \u00ab\u0421\u0442\u0430\u043b\u044c\u043d\u043e\u0439 \u043f\u0430\u043a\u0442\u00bb), \u0437\u0430\u043a\u0440\u0435\u043f\u0438\u0432\u0448\u0438\u0439 \u0441\u043e\u044e\u0437 \u043c\u0435\u0436\u0434\u0443 \u0440\u0435\u0436\u0438\u043c\u0430\u043c\u0438 \u0413\u0438\u0442\u043b\u0435\u0440\u0430 \u0438 \u041c\u0443\u0441\u0441\u043e\u043b\u0438\u043d\u0438. \u0414\u043e\u043a\u0443\u043c\u0435\u043d\u0442 \u0441\u043e\u0441\u0442\u043e\u044f\u043b \u0438\u0437 \u0441\u0435\u043c\u0438 \u0441\u0442\u0430\u0442\u0435\u0439 \u0438 \u0444\u0438\u043a\u0441\u0438\u0440\u043e\u0432\u0430\u043b \u043e\u0431\u044f\u0437\u0430\u0442\u0435\u043b\u044c\u0441\u0442\u0432\u0430 \u043f\u043e \u0432\u0437\u0430\u0438\u043c\u043d\u043e\u0439 \u0432\u2026",
+            "url": "https://russian.rt.com/science/article/1315931-italiya-germaniya-pakt",
+            "urlToImage": "https://mf.b37mrtl.ru/russian/images/2024.05/article/6647596102e8bd2ac921c591.jpg",
+            "publishedAt": "2024-05-22T08:37:28Z",
+            "content": "\u2014 , ?\r\n\u2014 . , , \u00ab \u00bb, \u00a0 . , , . , , . . , , . . , . - .\r\n . , . . 1919 , , . - : \u2014 , \u2014 , \u2014 , \u2014 . , .\r\n , , . , , , \u00ab \u00bb. , , , . . , , , .\r\n 1922 . III -. . , , . , : 1920- . .\r\n , , , . ( . dux \u2014 \u00ab, \u00bb,\u2026 [+545 chars]"
+        },
+        {
+            "source": {
+                "id": "t3n",
+                "name": "T3n"
+            },
+            "author": "Elisabeth Urban",
+            "title": "Der Bitcoin-Pizza-Day: Warum ein Deal von 2010 noch heute gefeiert wird",
+            "description": "Die erste mit Bitcoin bezahlte Ware waren zwei Pizzen. Wie der Deal am 22. Mai 2010 zustande kam \u2013 und was die",
+            "url": "https://t3n.de/news/bitcoin-pizza-day-deal-2010-feier-1625495/",
+            "urlToImage": "https://t3n.de/news/wp-content/uploads/2024/05/Pizza.jpg",
+            "publishedAt": "2024-05-22T08:13:18Z",
+            "content": "Es ist der 18. Mai 2010, Mittagszeit. In einem Bitcoin-Forum postet Laszlo Hanyecz ein Angebot, das in die Geschichte der Kryptow\u00e4hrungen eingehen wird. Der Programmierer aus Jacksonville, Florida, w\u2026 [+2449 chars]"
+        },
+        {
+            "source": {
+                "id": "cbc-news",
+                "name": "CBC News"
+            },
+            "author": "CBC News",
+            "title": "Qu\u00e9becor says Loblaw deal with telecom is anti-competitive, calls on Ottawa to step in | CBC News",
+            "description": "The head of telecom and media firm Quebecor is calling for the federal government to intervene over a deal between Loblaw and a company owned by Rogers and Bell that would see his company \u2014\u00a0and other telecom companies \u2014\u00a0pushed out of\u00a0180 Loblaw-owned stores.",
+            "url": "http://www.cbc.ca/news/politics/quebecor-anticompetitive-loblaw-1.7210381",
+            "urlToImage": "https://i.cbc.ca/1.7206729.1715891443!/fileImage/httpImage/image.JPG_gen/derivatives/16x9_620/cda-grocers-profits-20221103.JPG",
+            "publishedAt": "2024-05-22T08:07:23.6416975Z",
+            "content": "The head of telecom and media firm Qu\u00e9becor is calling on the federal government to intervene in a deal between Loblaw and a company owned by Rogers and Bell that would see his company and others\u00a0pus\u2026 [+3934 chars]"
+        },
+        {
+            "source": {
+                "id": "rtl-nieuws",
+                "name": "RTL Nieuws"
+            },
+            "author": "RTL Nieuws",
+            "title": "Live: debat over chaotische formatie en premierskandidaat",
+            "description": "De Tweede Kamer praat vanaf 10.15 uur over het onderhandelaarsakkoord dat de vier partijen vorige week hebben gesloten. De oppositiepartijen zullen de messen slijpen en felle kritiek hebben. Niet alleen over het akkoord, maar ook over die andere, grote kwesti\u2026",
+            "url": "https://www.rtlnieuws.nl/nieuws/nederland/artikel/5451649/volg-hier-live-het-kamerdebat-over-onderhandelaarsakkoord",
+            "urlToImage": "https://redactie.rtl.nl/sites/default/files/content/images/2024/05/22/ANP-495071414.jpg?itok=FAT4rclL&width=512&height=288&impolicy=semi_dynamic",
+            "publishedAt": "2024-05-22T08:07:17.454281Z",
+            "content": "Blijf op de hoogte van de nieuwste RTL programma's\r\nOntvang wekelijks updates over nieuwe programma's, exclusieve acties en persoonlijke tips in je mailbox\r\nBekijk ons \r\nprivacy beleid voor meer info\u2026 [+99 chars]"
+        },
+        {
+            "source": {
+                "id": "bbc-sport",
+                "name": "BBC Sport"
+            },
+            "author": null,
+            "title": "NBA play-offs: Boston Celtics beat Indiana Pacers 133-128 in game one of Eastern Conference Finals",
+            "description": "The Boston Celtics beat the Indiana Pacers 133-128 in overtime in game one of the Eastern Conference Finals.",
+            "url": "http://www.bbc.co.uk/sport/basketball/articles/cjjj04n5g2qo",
+            "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_sport/dd1d/live/74486bd0-17fe-11ef-b5cc-cb8b8c4cef5a.jpg",
+            "publishedAt": "2024-05-22T08:07:17.1854234Z",
+            "content": "The Boston Celtics beat the Indiana Pacers 133-128 in overtime in game one of the Eastern Conference Finals.\r\nThe Celtics' Jaylen Brown scored a three-pointer with six seconds remaining to level the \u2026 [+907 chars]"
+        },
+        {
+            "source": {
+                "id": "buzzfeed",
+                "name": "Buzzfeed"
+            },
+            "author": "Daniella Emanuel",
+            "title": "16 Bone-Chilling Photos That'll Turn You Into An Official Member Of The \"No Sleep Club\"",
+            "description": "My stomach is doing somersaults.",
+            "url": "https://www.buzzfeed.com/daniellaemanuel/untitled-draft-1715886334-2o6jgl63jk?origin=spl",
+            "urlToImage": "https://img.buzzfeed.com/buzzfeed-static/static/2024-05/17/0/enhanced/a9d51a3baf88/original-470-1715906435-4.jpg?crop=1245:651;3,89%26downsize=1250:*",
+            "publishedAt": "2024-05-22T08:07:12.7974745Z",
+            "content": null
+        },
+        {
+            "source": {
+                "id": "google-news-it",
+                "name": "Google News (Italy)"
+            },
+            "author": "Il Sole 24 ORE",
+            "title": "Le notizie di marted\u00ec 21 maggio - Il Sole 24 ORE",
+            "description": null,
+            "url": "https://news.google.com/rss/articles/CBMioQFodHRwczovL3d3dy5pbHNvbGUyNG9yZS5jb20vYXJ0L2d1ZXJyYS11bHRpbWUtbm90aXppZS1iaWRlbi12YWx1dGEtc2FuemlvbmktY29udHJvLWNvcnRlLWRlbGwtYWphLW1hci1iYWx0aWNvLW1vc2NhLW1vZGlmaWNhLWNvbmZpbmktbGl0dWFuaWEtZS1maW5sYW5kaWEtQUdwTFdlQ9IBLGh0dHBzOi8vYW1wMjQuaWxzb2xlMjRvcmUuY29tL3BhZ2luYS9BR3BMV2VD?oc=5",
+            "urlToImage": null,
+            "publishedAt": "2024-05-22T08:03:45+00:00",
+            "content": null
+        },
+        {
+            "source": {
+                "id": "reuters",
+                "name": "Reuters"
+            },
+            "author": "Kokkai Ng, Joseph Campbell",
+            "title": "Shaken passengers arrive in Singapore after deadly turbulence-stricken flight",
+            "description": "More than 140 passengers and crew from a Singapore Airlines flight hit by heavy turbulence that left dozens injured and one dead finally reached Singapore on a relief flight Wednesday morning after an emergency landing in Bangkok.",
+            "url": "https://www.reuters.com/world/asia-pacific/shaken-passengers-arrive-singapore-after-turbulence-hit-flight-2024-05-21/",
+            "urlToImage": "https://www.reuters.com/resizer/v2/OMI73DG3IVIHNO34G2AYZICL3U.jpg?auth=e00d80747d4e96ac6ef24b83ab99eae7ba63b95e4d3fc64108d5e0f1cfc7e905&height=1005&width=1920&quality=80&smart=true",
+            "publishedAt": "2024-05-22T07:43:36Z",
+            "content": null
+        },
+        {
+            "source": {
+                "id": "argaam",
+                "name": "Argaam"
+            },
+            "author": "Argaam",
+            "title": "\u0646\u062a\u0627\u0626\u062c \u0634\u0631\u0643\u0627\u062a \u0627\u0644\u0628\u062a\u0631\u0648\u0643\u064a\u0645\u0627\u0648\u064a\u0627\u062a \u0623\u062f\u0646\u0649 \u0645\u0646 \u062a\u0648\u0642\u0639\u0627\u062a \u0634\u0631\u0643\u0627\u062a \u0627\u0644\u0623\u0628\u062d\u0627\u062b \u0628\u0640 25% \u062e\u0644\u0627\u0644 \u0627\u0644\u0631\u0628\u0639 \u0627\u0644\u0623\u0648\u0644 2024",
+            "description": "\u0623\u0639\u0644\u0646\u062a \u0634\u0631\u0643\u0627\u062a \u0627\u0644\u0628\u062a\u0631\u0648\u0643\u064a\u0645\u0627\u0648\u064a\u0627\u062a \u0646\u062a\u0627\u0626\u062c\u0647\u0627 \u0644\u0644\u0631\u0628\u0639 \u0627\u0644\u0623\u0648\u0644 2024 \u0648\u0627\u0644\u062a\u064a\u062c\u0627\u0621\u062a \u0623\u062f\u0646\u0649\u0628\u0640 25.1 %\u0645\u0646 \u062a\u0648\u0642\u0639\u0627\u062a \u0634\u0631\u0643\u0627\u062a \u0627\u0644\u0623\u0628\u062d\u0627\u062b \u0648\u0627\u0644\u062a\u064a \u062a\u0631\u0635\u062f\u0647\u0627 \u0628\u0648\u0627\u0628\u0629\u0623\u0631\u0642\u0640\u0627\u0645\u0627\u0644\u0645\u0627\u0644\u064a\u0629\u060c\u062d\u064a\u062b \u0633\u062c\u0644\u062a \u0627\u0644\u0634\u0631\u0643\u0627\u062a \u062a\u062d",
+            "url": "https://www.argaam.com/ar/sector-estimates-report-post-result/3/41553?preview=true",
+            "urlToImage": "https://www.argaam.com/content/ar/images/argaam-plus-ar.jpg",
+            "publishedAt": "2024-05-22T07:37:21.8921342Z",
+            "content": "2024 \u00a0 \u00a0 25.1 %\u00a0 \u00a0\"\"\u00a0\u00a0 (10 ) 674.9 90"
+        },
+        {
+            "source": {
+                "id": "news-com-au",
+                "name": "News.com.au"
+            },
+            "author": "Frank Chung",
+            "title": "\u2018Awful\u2019: $15k detail exposes car problem",
+            "description": "A Facebook marketplace ad for second-hand luxury Porsche SUV has gone viral over one detail demonstrating why it is \u201cworth less than a Commodore\u201d of the same age.",
+            "url": "https://www.news.com.au/technology/motoring/on-the-road/awful-15000-maintenance-bill-highlights-european-car-problem/news-story/3b3395608d7ad4ffb4d6f8e4303b13b8",
+            "urlToImage": "https://content.api.news/v3/images/bin/e66b6f767154fb9c3d859cc4fa2f72d9",
+            "publishedAt": "2024-05-22T07:26:00Z",
+            "content": "A Facebook marketplace ad for second-hand luxury Porsche SUV has gone viral over one detail demonstrating why it is \u201cworth less than a Commodore\u201d of the same age.\r\nThe \u201cextremely well maintained\u201d 200\u2026 [+7061 chars]"
+        },
+        {
+            "source": {
+                "id": "cnn-es",
+                "name": "CNN Spanish"
+            },
+            "author": "Melissa Vel\u00e1squez Loaiza",
+            "title": "Tormentas causantes de tornados han dejado varios muertos en Iowa y amenazan ahora ciudades desde Texas hasta Nueva York",
+            "description": "Este martes se registraron al menos 17 tornados en Iowa, como parte de un desfile de tormentas que ha recorrido Estados Unidos esta semana. La amenaza de tormentas el\u00e9ctricas severas se debilita ligeramente, pero se espera que desaten fuertes vientos, granizo\u2026",
+            "url": "https://cnnespanol.cnn.com/2024/05/22/tormentas-tornadosmuertos-iowa-amenz-texas-nueva-york-trax/",
+            "urlToImage": "https://cnnespanol.cnn.com/wp-content/uploads/2024/05/Tornado-Greenfield-Iowa-mayo-21-e1716361638924.jpeg?quality=100&strip=info",
+            "publishedAt": "2024-05-22T07:22:53Z",
+            "content": "Video relacionado: Oklahoma y Kansas, arrasados por tornados 0:31\r\n(CNN) -- Algunas comunidades de Iowa despiertan este mi\u00e9rcoles rebuscando entre los escombros de casas ahora irreconocibles y lloran\u2026 [+5152 chars]"
+        },
+        {
+            "source": {
+                "id": "rt",
+                "name": "RT"
+            },
+            "author": "RT",
+            "title": "\u0412\u043e\u0435\u043d\u043a\u043e\u0440 RT \u043f\u043e\u043a\u0430\u0437\u0430\u043b \u043a\u0430\u0434\u0440\u044b \u0443\u0434\u0430\u0440\u0430 \u0412\u0421\u0423 FPV-\u0434\u0440\u043e\u043d\u043e\u043c \u043f\u043e \u0434\u043e\u043c\u0443, \u0433\u0434\u0435 \u043e\u043d \u0440\u0430\u0431\u043e\u0442\u0430\u043b",
+            "description": "\u0412\u043e\u0435\u043d\u043a\u043e\u0440\u0443 RT \u0410\u043d\u0434\u0440\u0435\u044e \u0424\u0438\u043b\u0430\u0442\u043e\u0432\u0443 \u0443\u0434\u0430\u043b\u043e\u0441\u044c \u0441\u043d\u044f\u0442\u044c \u0443\u0434\u0430\u0440\u044b \u0441\u043e \u0441\u0442\u043e\u0440\u043e\u043d\u044b \u0412\u0421\u0423 FPV-\u0434\u0440\u043e\u043d\u0430\u043c\u0438 \u0438 \u043c\u0438\u043d\u0430\u043c\u0438 \u043f\u043e \u0434\u043e\u043c\u0443, \u0433\u0434\u0435 \u043e\u043d \u0440\u0430\u0431\u043e\u0442\u0430\u043b. \u0423\u043d\u0438\u043a\u0430\u043b\u044c\u043d\u044b\u0435 \u043a\u0430\u0434\u0440\u044b \u0431\u044b\u043b\u0438 \u0441\u0434\u0435\u043b\u0430\u043d\u044b \u0432\u043e \u0432\u0440\u0435\u043c\u044f \u043e\u0441\u0432\u043e\u0431\u043e\u0436\u0434\u0435\u043d\u0438\u044f \u0410\u0432\u0434\u0435\u0435\u0432\u043a\u0438. \u0412 \u0434\u043e\u043c\u0435 \u043d\u0430 \u0432\u0438\u0434\u0435\u043e \u043e\u0431\u043e\u0440\u0443\u0434\u043e\u0432\u0430\u043d \u043a\u043e\u043c\u0430\u043d\u0434\u043d\u043e-\u043d\u0430\u0431\u043b\u044e\u0434\u0430\u0442\u0435\u043b\u044c\u043d\u044b\u0439 \u043f\u0443\u043d\u043a\u0442 \u043e\u0442\u0440\u044f\u0434\u0430 \u00ab\u0428\u0442\u043e\u0440\u043c\u00bb 114-\u0439 \u0431\u0440\u0438\u0433\u0430\u0434\u044b \u0438 \u2026",
+            "url": "https://russian.rt.com/ussr/video/1318065-voenkor-rt-pokazal-kadry-udara-vsu-fpv",
+            "urlToImage": "https://mf.b37mrtl.ru/russian/images/2024.05/article/664d983402e8bd01551ff268.jpg",
+            "publishedAt": "2024-05-22T07:01:33Z",
+            "content": null
+        },
+        {
+            "source": {
+                "id": "nrk",
+                "name": "NRK"
+            },
+            "author": "Heidi Ditlefsen",
+            "title": "L\u00f8veunger f\u00f8dt i Dyreparken",
+            "description": "Natt til 18. mai ble det f\u00f8dt l\u00f8veunger i Dyreparken. Alt ser ut til \u00e5 g\u00e5 fint med mor Kira og de tre sm\u00e5.",
+            "url": "https://www.nrk.no/sorlandet/loveunger-fodt-i-dyreparken-1.16891778",
+            "urlToImage": "https://gfx.nrk.no/YN2gzutMEC1yJYQLHlm81gpfBHg8K_0vcj35ex_VJFLA.jpg",
+            "publishedAt": "2024-05-22T07:00:41Z",
+            "content": "Natt til l\u00f8rdag ble det f\u00f8dt fire l\u00f8veunger. \u00c9n overlevde dessverre ikke, men de andre tre er friske og aktive, sier dyrepasser Olav \u00c5sland. \r\nHan forteller at mor Kira passer godt p\u00e5 ungene og gir d\u2026 [+2712 chars]"
+        },
+        {
+            "source": {
+                "id": "google-news-it",
+                "name": "Google News (Italy)"
+            },
+            "author": "Il Fatto Quotidiano",
+            "title": "Sanremo 2025, Carlo Conti \u00e8 il nuovo conduttore e direttore artistico: l'annuncio al tg1 delle 8 (con una smentita) - Il Fatto Quotidiano",
+            "description": null,
+            "url": "https://news.google.com/rss/articles/CBMiowFodHRwczovL3d3dy5pbGZhdHRvcXVvdGlkaWFuby5pdC8yMDI0LzA1LzIyL3NhbnJlbW8tMjAyNS1jYXJsby1jb250aS1lLWlsLW51b3ZvLWNvbmR1dHRvcmUtZS1kaXJldHRvcmUtYXJ0aXN0aWNvLWxhbm51bmNpby1hbC10ZzEtZGVsbGUtOC1jb24tdW5hLXNtZW50aXRhLzc1NTc1NDIv0gEA?oc=5",
+            "urlToImage": null,
+            "publishedAt": "2024-05-22T06:49:30+00:00",
+            "content": null
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "[Removed]"
+            },
+            "author": null,
+            "title": "[Removed]",
+            "description": "[Removed]",
+            "url": "https://removed.com",
+            "urlToImage": null,
+            "publishedAt": "1970-01-01T00:00:00Z",
+            "content": "[Removed]"
+        },
+        {
+            "source": {
+                "id": "google-news-in",
+                "name": "Google News (India)"
+            },
+            "author": "Hindustan Times",
+            "title": "Mumbai hoarding collapse: Death toll rises to 17; SIT to probe Ghatkopar incident - Hindustan Times",
+            "description": null,
+            "url": "https://news.google.com/rss/articles/CBMijgFodHRwczovL3d3dy5oaW5kdXN0YW50aW1lcy5jb20vaW5kaWEtbmV3cy9tdW1iYWktaG9hcmRpbmctY29sbGFwc2UtZGVhdGgtdG9sbC1yaXNlcy10by0xNy1zaXQtdG8tcHJvYmUtZ2hhdGtvcGFyLWluY2lkZW50LTEwMTcxNjM1Mzc1NTQxNy5odG1s0gEA?oc=5",
+            "urlToImage": null,
+            "publishedAt": "2024-05-22T06:38:17+00:00",
+            "content": null
+        }
+    ]
+}
