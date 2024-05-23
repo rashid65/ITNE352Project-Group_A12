@@ -20,6 +20,16 @@ def savejson(fileName, data):
     with open(fileName, 'w') as f:
         json.dump(data, f, indent=4)
 
+def Headline_KeyWord(Keyword): #not tested
+    GETMsg = f'https://newsapi.org/v2/top-headlines?category={Keyword}&apiKey={"7558a150954e4dcaafa560b8d6f689c5"}'
+    response = requests.get(GETMsg)
+    return response.json()
+
+def Headline_category(category): #not tested
+    GETMsg = f'https://newsapi.org/v2/top-headlines?q={category}&apiKey={"7558a150954e4dcaafa560b8d6f689c5"}'
+    response = requests.get(GETMsg)
+    return response.json()
+
 def ServeClient(Sock_a, SockName): # Thread 
     print("connected to ", SockName , "\n")
     try:
