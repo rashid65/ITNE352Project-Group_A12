@@ -6,26 +6,22 @@ from newsapi import NewsApiClient
 
 newsapi = NewsApiClient(api_key="7558a150954e4dcaafa560b8d6f689c5")
 
-def NEWHeadlines(): #changed it to us??
+#Headlines functions
+def NEWHeadlines():
     url = f'https://newsapi.org/v2/top-headlines?country=us&pageSize=15&apiKey={"7558a150954e4dcaafa560b8d6f689c5"}'
     response = requests.get(url)
-    return response.json()
-
-def NEWSources():
-    GETMsg = f'https://newsapi.org/v2/sources?pageSize=15&apiKey={"7558a150954e4dcaafa560b8d6f689c5"}'
-    response = requests.get(GETMsg)
     return response.json()
 
 def savejson(fileName, data):
     with open(fileName, 'w') as f:
         json.dump(data, f, indent=4)
 
-def Headline_KeyWord(Keyword): #tested worked fine
+def Headline_KeyWord(Keyword):
     GETMsg = f'https://newsapi.org/v2/top-headlines?q={Keyword}&pageSize=15&apiKey={"7558a150954e4dcaafa560b8d6f689c5"}'
     response = requests.get(GETMsg)
     return response.json()
 
-def Headline_category(category): #tested worked fine
+def Headline_category(category):
     GETMsg = f'https://newsapi.org/v2/top-headlines?category={category}&pageSize=15&apiKey={"7558a150954e4dcaafa560b8d6f689c5"}'
     response = requests.get(GETMsg)
     return response.json()
@@ -39,6 +35,19 @@ def Headline_country(countryNum):
     countries = ["au","nz","ca","ae","sa","gb","us","eg","ma"]
     country = countries[int(countryNum)-1]
     GETMsg = f'https://newsapi.org/v2/top-headlines?country={country}&pageSize=15&apiKey={"7558a150954e4dcaafa560b8d6f689c5"}'
+    response = requests.get(GETMsg)
+    return response.json()
+
+#Source functions
+def NEWSources():
+    GETMsg = f'https://newsapi.org/v2/sources?pageSize=15&apiKey={"7558a150954e4dcaafa560b8d6f689c5"}'
+    response = requests.get(GETMsg)
+    return response.json()
+
+def SourceCategory(categoryNum):
+    categories = ["business", "entertainment", "general", "health", "science", "sports", "technology"]
+    category = categories[int(categoryNum)-1]
+    GETMsg = f'https://newsapi.org/v2/top-headlines/sources?category={category}&pageSize=15&apiKey={"7558a150954e4dcaafa560b8d6f689c5"}'
     response = requests.get(GETMsg)
     return response.json()
 
@@ -87,6 +96,15 @@ def ServeClient(Sock_a, SockName): # Thread
                 #---------------------------------------SOURCE---------------------------------------------------------------------------
                 elif MenuChoice == "2":
                     SoruceChoice = Sock_a.recv(1024).decode('ascii')
+                
+                    if SoruceChoice == "1":
+                        ClientCategory = Sock_a.recv(1024).decode('ascii')
+                        data = SourceCategory(ClientCategory)
+                        fileName = f'A12_{ClientName}_SorcesByCategory'
+                        savejson(fileName,data)
+                    
+                    # if SoruceChoice == "3":
+
                     if SoruceChoice == "5":
                         Back = True
                         continue
