@@ -82,25 +82,25 @@ def ServeClient(Sock_a, SockName): # Thread
                     if HeadlineChoice == "1":
                         ClientKeyword = Sock_a.recv(1024).decode('ascii')
                         Data = Headline_KeyWord(ClientKeyword)
-                        fileName = f'A12_{ClientName}_SearchByKeyword'
+                        fileName = f'A12_{ClientName}_SearchByKeyword.json'
                         savejson(fileName,Data)
                     
                     elif HeadlineChoice == "2":
                         ClientCatNum = Sock_a.recv(1024).decode('ascii')
                         ClientCat = WhichCateWasChosen(ClientCatNum)
                         Data = Headline_category(ClientCat)
-                        fileName = f'A12_{ClientName}_SearchByCategory'
+                        fileName = f'A12_{ClientName}_SearchByCategory.json'
                         savejson(fileName,Data)
                     
                     elif HeadlineChoice == "3":
                         Clientcountry = Sock_a.recv(1024).decode('ascii')
                         Data = Headline_country(Clientcountry)
-                        fileName = f'A12_{ClientName}_SearchByCountry'
+                        fileName = f'A12_{ClientName}_SearchByCountry.json'
                         savejson(fileName,Data)
 
                     elif HeadlineChoice == "4":
                         data = NEWHeadlines()
-                        fileName = f'A12_{ClientName}_ListAllHeadlines'
+                        fileName = f'A12_{ClientName}_ListAllHeadlines.json'
                         savejson(fileName,data)
 
                     elif HeadlineChoice == "5":
@@ -115,21 +115,21 @@ def ServeClient(Sock_a, SockName): # Thread
                     if SourceChoice == "1":
                         ClientCategory = Sock_a.recv(1024).decode('ascii')
                         data = SourceCategory(ClientCategory)
-                        fileName = f'A12_{ClientName}_SorcesByCategory'
+                        fileName = f'A12_{ClientName}_SorcesByCategory.json'
                         savejson(fileName,data)
                     elif SourceChoice == "2":
                         clientCountry = Sock_a.recv(1024).decode('ascii')
                         data = SourceCountry(clientCountry)
-                        fileName = f'A12_{ClientName}_SorcesByCountry'
+                        fileName = f'A12_{ClientName}_SorcesByCountry.json'
                         savejson(fileName,data)
                     elif SourceChoice == "3":
                         clientlanguage = Sock_a.recv(1024).decode('ascii')
                         data = SourceCountry(clientlanguage)
-                        fileName = f'A12_{ClientName}_SorcesByLanguage'
+                        fileName = f'A12_{ClientName}_SorcesByLanguage.json'
                         savejson(fileName,data)
                     elif SourceChoice == "4":
                         data = NEWSources()
-                        fileName = f'A12_{ClientName}_ListAllsources'
+                        fileName = f'A12_{ClientName}_ListAllsources.json'
                         savejson(fileName,data)
                     elif SourceChoice == "5":
                         break
