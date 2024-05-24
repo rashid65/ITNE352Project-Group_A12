@@ -32,8 +32,8 @@ def WhichCateWasChosen(Num):
     return categoryList[Num]
 
 def Headline_country(countryNum):
-    countries = ["au","nz","ca","ae","sa","gb","us","eg","ma"]
-    country = countries[int(countryNum)-1]
+    countrylist = ["au","nz","ca","ae","sa","gb","us","eg","ma"]
+    country = countrylist[int(countryNum)-1]
     GETMsg = f'https://newsapi.org/v2/top-headlines?country={country}&pageSize=15&apiKey={"7558a150954e4dcaafa560b8d6f689c5"}'
     response = requests.get(GETMsg)
     return response.json()
@@ -45,9 +45,23 @@ def NEWSources():
     return response.json()
 
 def SourceCategory(categoryNum):
-    categories = ["business", "entertainment", "general", "health", "science", "sports", "technology"]
-    category = categories[int(categoryNum)-1]
+    categorylist = ["business", "entertainment", "general", "health", "science", "sports", "technology"]
+    category = categorylist[int(categoryNum)-1]
     GETMsg = f'https://newsapi.org/v2/top-headlines/sources?category={category}&pageSize=15&apiKey={"7558a150954e4dcaafa560b8d6f689c5"}'
+    response = requests.get(GETMsg)
+    return response.json()
+
+def SourceCountry(countryNum):
+    countryList = ["au","NZ","ca","ae","sa","gb","us","eg","ma"]
+    country = countryList[int(countryNum)-1]
+    GETMsg = f'https://newsapi.org/v2/top-headlines/sources?country={country}&pageSize=15&apiKey={"7558a150954e4dcaafa560b8d6f689c5"}'
+    response = requests.get(GETMsg)
+    return response.json()
+
+def Sourcelanguage(languageNum):
+    languagelist = ["ar","en"]
+    language = languagelist[int(languageNum)-1]
+    GETMsg = f'https://newsapi.org/v2/top-headlines/sources?language={language}&pageSize=15&apiKey={"7558a150954e4dcaafa560b8d6f689c5"}'
     response = requests.get(GETMsg)
     return response.json()
 
@@ -63,7 +77,6 @@ def ServeClient(Sock_a, SockName): # Thread
             if MenuChoice == "1":
                 quitmenu2 = False
                 while quitmenu2 == False:
-                    print(f"i got ur message {ClientName} ur headline choice number 22222222 ")
                     HeadlineChoice = Sock_a.recv(1024).decode('ascii')
                 
                     if HeadlineChoice == "1":
@@ -97,21 +110,32 @@ def ServeClient(Sock_a, SockName): # Thread
             elif MenuChoice == "2":
                 quitmenu3 = False
                 while quitmenu3 == False:
-                    SoruceChoice = Sock_a.recv(1024).decode('ascii')
+                    SourceChoice = Sock_a.recv(1024).decode('ascii')
                 
-                    if SoruceChoice == "1":
+                    if SourceChoice == "1":
                         ClientCategory = Sock_a.recv(1024).decode('ascii')
                         data = SourceCategory(ClientCategory)
                         fileName = f'A12_{ClientName}_SorcesByCategory'
                         savejson(fileName,data)
-                    
-                    # if SoruceChoice == "3":
-
-                    if SoruceChoice == "5":
+                    elif SourceChoice == "2":
+                        clientCountry = Sock_a.recv(1024).decode('ascii')
+                        data = SourceCountry(clientCountry)
+                        fileName = f'A12_{ClientName}_SorcesByCountry'
+                        savejson(fileName,data)
+                    elif SourceChoice == "3":
+                        clientlanguage = Sock_a.recv(1024).decode('ascii')
+                        data = SourceCountry(clientlanguage)
+                        fileName = f'A12_{ClientName}_SorcesByLanguage'
+                        savejson(fileName,data)
+                    elif SourceChoice == "4":
+                        data = NEWSources()
+                        fileName = f'A12_{ClientName}_ListAllsources'
+                        savejson(fileName,data)
+                    elif SourceChoice == "5":
                         break
                     #API code for sources
 
-                    print(f"i got ur message {ClientName} ur soruce choice number {SoruceChoice}")
+                    print(f"i got ur message {ClientName} ur soruce choice number {SourceChoice}")
             elif MenuChoice == "3":
                 quitmenu1 = False
                 continue

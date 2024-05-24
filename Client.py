@@ -36,13 +36,13 @@ def MainClient():
 
                     choice_Headline = input("\nChoose an option:\n")
                     
-                    if int(choice_Headline) < 1 or int(choice_Headline) > 5:
-                        print("\nPlease choose a valid number")
+                    if choice_Headline < "1" or choice_Headline > "7": #checking if it was a charcter
+                        print("Please choose a valid number")
+                    elif int(choice_Headline) < 1 or int(choice_Headline) > 7: #checking the number range
+                        print("Please choose a valid number")
                     else:
                         cs.sendall(choice_Headline.encode('ascii'))
 
-                    
-                    
                     if choice_Headline == "1":                                                     # Keyword option (Headlines)
                         choice_Headline_Keyword = input("Enter the Keyword you want to search for: ")
                     elif choice_Headline == "2":                                                   # Categories option (Headlines)
@@ -58,7 +58,9 @@ def MainClient():
 
                         choice_Headline_Catagory = input("\nChoose a Catagory:\n")
 
-                        if int(choice_Headline_Catagory) < 1 or int(choice_Headline_Catagory) > 7:
+                        if choice_Headline_Catagory < "1" or choice_Headline_Catagory > "7": #checking if it was a charcter
+                            print("Please choose a valid number")
+                        elif int(choice_Headline_Catagory) < 1 or int(choice_Headline_Catagory) > 7: #checking the number range
                             print("Please choose a valid number")
                         else:
                             cs.sendall(choice_Headline_Catagory.encode('ascii'))
@@ -78,15 +80,15 @@ def MainClient():
 
                         choice_Headline_Country = input("\nChoose a Country:\n")
 
-                        if int(choice_Headline_Country) < 1 or int(choice_Headline_Country) > 9:
+                        if choice_Headline_Country < "1" or choice_Headline_Country > "7": #checking if it was a charcter
+                            print("Please choose a valid number")
+                        elif int(choice_Headline_Country) < 1 or int(choice_Headline_Country) > 7: #checking the number range
                             print("Please choose a valid number")
                         else:
                             cs.sendall(choice_Headline_Country.encode('ascii'))
 
-                    
                     elif choice_Headline == "4":                                                   # top Headlines option
-                        print("requesting top headlines from the server...")
-                        # do smth here send to server ?
+                        cs.sendall(choice_Headline.encode('ascii'))
                     elif choice_Headline == "5":
                             goback = True
             #=====================================********SOURCE*********============================================================
@@ -140,22 +142,29 @@ def MainClient():
                         print("7- United States of America (us)")
                         print("8- Egypt (eg)")
                         print("9- Morocco (ma)")
+
                         choice_Source_Country = input("\nChoose a Country:\n")
-                        if int(choice_Source_Country) < 1 or int(choice_Source_Country) > 9:
+
+                        if choice_Source_Country < "1" or choice_Source_Country > "7": #checking if it was a charcter
+                            print("Please choose a valid number")
+                        elif int(choice_Source_Country) < 1 or int(choice_Source_Country) > 7: #checking the number range
                             print("Please choose a valid number")
                         else:
                             cs.sendall(choice_Source_Country.encode('ascii'))
-
+                        
                     elif choice_Source == "3":                                                                        #Language option (Source)
                         print("Available Languages")
                         print("1- Arabic (ar)")
                         print("2- English (en)")
                         choice_Source_Language = input("\nChoose a Language:\n")
-                        if int(choice_Source_Language) < 1 or int(choice_Source_Language) > 2:
-                            print("please chose a valid number")
+
+                        if choice_Source_Language < "1" or choice_Source_Language > "7": #checking if it was a charcter
+                            print("Please choose a valid number")
+                        elif int(choice_Source_Language) < 1 or int(choice_Source_Language) > 7: #checking the number range
+                            print("Please choose a valid number")
                         else:
                             cs.sendall(choice_Source_Language.encode('ascii'))
-                    
+
                     elif choice_Source == "4":
                         print("smth")
                         #do smth here
