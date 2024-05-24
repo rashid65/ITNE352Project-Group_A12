@@ -56,45 +56,47 @@ def ServeClient(Sock_a, SockName): # Thread
     try:
         ClientName = Sock_a.recv(1024).decode('ascii')
         print("the client name is ", ClientName)
-        Noquit = True
-        while Noquit:
-            Back = True
-            while Back:
-                Back = False
-                MenuChoice = Sock_a.recv(1024).decode('ascii') #here it will receive either 1 for headlines or 2 for sources
-                if MenuChoice == "1":
-                    HeadlineChoice = Sock_a.recv(1024).decode('ascii')
 
+        quitmenu1 = True
+        while quitmenu1:
+            MenuChoice = Sock_a.recv(1024).decode('ascii') #here it will receive either 1 for headlines or 2 for sources
+            if MenuChoice == "1":
+                quitmenu2 = False
+                while quitmenu2 == False:
+                    print(f"i got ur message {ClientName} ur headline choice number 22222222 ")
+                    HeadlineChoice = Sock_a.recv(1024).decode('ascii')
+                
                     if HeadlineChoice == "1":
                         ClientKeyword = Sock_a.recv(1024).decode('ascii')
                         Data = Headline_KeyWord(ClientKeyword)
                         fileName = f'A12_{ClientName}_SearchByKeyword'
                         savejson(fileName,Data)
                     
-                    if HeadlineChoice == "2":
+                    elif HeadlineChoice == "2":
                         ClientCatNum = Sock_a.recv(1024).decode('ascii')
                         ClientCat = WhichCateWasChosen(ClientCatNum)
                         Data = Headline_category(ClientCat)
                         fileName = f'A12_{ClientName}_SearchByCategory'
                         savejson(fileName,Data)
                     
-                    if HeadlineChoice == "3":
+                    elif HeadlineChoice == "3":
                         Clientcountry = Sock_a.recv(1024).decode('ascii')
                         Data = Headline_country(Clientcountry)
                         fileName = f'A12_{ClientName}_SearchByCountry'
                         savejson(fileName,Data)
 
-                    if HeadlineChoice == "4":
+                    elif HeadlineChoice == "4":
                         data = NEWHeadlines()
                         fileName = f'A12_{ClientName}_ListAllHeadlines'
                         savejson(fileName,data)
 
-                    if HeadlineChoice == "5":
-                        Back = True
-                        continue
+                    elif HeadlineChoice == "5":
+                        break
                     print(f"i got ur message {ClientName} ur headline choice number {HeadlineChoice}")
-                #---------------------------------------SOURCE---------------------------------------------------------------------------
-                elif MenuChoice == "2":
+        #---------------------------------------SOURCE---------------------------------------------------------------------------
+            elif MenuChoice == "2":
+                quitmenu3 = False
+                while quitmenu3 == False:
                     SoruceChoice = Sock_a.recv(1024).decode('ascii')
                 
                     if SoruceChoice == "1":
@@ -106,15 +108,14 @@ def ServeClient(Sock_a, SockName): # Thread
                     # if SoruceChoice == "3":
 
                     if SoruceChoice == "5":
-                        Back = True
-                        continue
+                        break
                     #API code for sources
 
                     print(f"i got ur message {ClientName} ur soruce choice number {SoruceChoice}")
-                elif MenuChoice == "3":
-                    Noquit = False
-                    continue
-    
+            elif MenuChoice == "3":
+                quitmenu1 = False
+                continue
+
     finally:
         Sock_a.close()
         print("Connection closed with", ClientName)

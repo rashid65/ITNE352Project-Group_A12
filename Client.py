@@ -27,7 +27,6 @@ def MainClient():
 
                 goback = False
                 while goback == False:
-                    goback = False
                     print("\n~~~Search Headlines Menu~~~")
                     print("1- Search by keywords")
                     print("2- Search by category")
@@ -39,7 +38,6 @@ def MainClient():
                     
                     if int(choice_Headline) < 1 or int(choice_Headline) > 5:
                         print("\nPlease choose a valid number")
-                        continue
                     else:
                         cs.sendall(choice_Headline.encode('ascii'))
 
@@ -47,7 +45,6 @@ def MainClient():
                     
                     if choice_Headline == "1":                                                     # Keyword option (Headlines)
                         choice_Headline_Keyword = input("Enter the Keyword you want to search for: ")
-                        cs.sendall(choice_Headline_Keyword.encode('ascii'))
                     elif choice_Headline == "2":                                                   # Categories option (Headlines)
 
                         print("====== availble Categories ======")
@@ -105,8 +102,10 @@ def MainClient():
                     print("5- Back to main menu")
 
                     choice_Source = input("\nChoose an option:\n")
-
-                    if int(choice_Source) < 1 or int(choice_Source) > 5:
+                    
+                    if choice_Source < "1" or choice_Source > "5":
+                        print("\nPlease choose a valid number")
+                    elif int(choice_Source) < 1 or int(choice_Source) > 5:
                         print("\nPlease choose a valid number")
                     else:
                         cs.sendall(choice_Source.encode('ascii'))
@@ -123,7 +122,9 @@ def MainClient():
 
                         choice_Source_Catagory = input("\nChoose a Catagory:\n")
 
-                        if int(choice_Source_Catagory) < 1 or int(choice_Source_Catagory) > 7:
+                        if choice_Source_Catagory < "1" or choice_Source_Catagory > "7": #checking if it was a charcter
+                            print("Please choose a valid number")
+                        elif int(choice_Source_Catagory) < 1 or int(choice_Source_Catagory) > 7: #checking the number range
                             print("Please choose a valid number")
                         else:
                             cs.sendall(choice_Source_Catagory.encode('ascii'))
@@ -163,8 +164,8 @@ def MainClient():
                             goback2 = True
 
             elif choice == "3":
+
                 quit = True
-                cs.sendall(choice.encode('ascii'))
                 cs.close()
                 break
  
