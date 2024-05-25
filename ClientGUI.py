@@ -29,12 +29,20 @@ def display_MainMenu():
         rb.pack(anchor=tk.W, padx=20)
 
     # Create and place the submit button for the menu
-    submit_button = tk.Button(root, text="Submit", font=("Arial", 12), command=lambda: submit_choice(cs, selected_item.get()))
+    submit_button = tk.Button(root, text="Submit", font=("Arial", 12), command=lambda: submit_choice(cs, selected_item.get(),1))
     submit_button.pack(pady=10)
 
-def submit_choice(cs, choice):
-    cs.sendall(choice.encode('ascii'))
-    display_SecondMenu(choice)
+def submit_choice(cs, choice, cases):
+    if cases != 3: #to not be confused with keyword
+        cs.sendall(choice.encode('ascii')) # sends to the server each time it accese it
+    if cases == 1:
+        display_SecondMenu(choice) # moves from main menu to what the user chooses
+    if cases == 2:
+        Handel_Headline(choice) # moves to which option the user chose under Headlines
+    if cases == 3: # when user search by keyword
+        keyword = choice.get()
+        keyword = KeywordFormat(keyword)
+        cs.sendall(keyword.encode('ascii'))
 
 def display_SecondMenu(Menu):
     for widget in root.winfo_children():
@@ -52,8 +60,28 @@ def display_SecondMenu(Menu):
             rbb = tk.Radiobutton(root, text=choice, variable=selected_item, value=choice, font=("Arial", 12))
             rbb.pack(anchor=tk.W, padx=20)
 
-        submit_button = tk.Button(root, text="Submit", font=("Arial", 12), command=lambda: submit_choice(cs, selected_item.get()))
+        submit_button = tk.Button(root, text="Submit", font=("Arial", 12), command=lambda: submit_choice(cs, selected_item.get(),2))
         submit_button.pack(pady=10)
+
+#function to chnage the spaces into plus for the GET message
+def KeywordFormat(input):
+    trimmed = input.strip()
+    modified = trimmed.replace(' ', '+')
+    return modified
+
+#function to handel all Headline optiions
+def Handel_Headline(choice):
+    if choice == "Search by keywords":
+        label = tk.Label(root, text="Please enter what you want to search for:", font=("Arial", 14))
+        label.pack(pady=10)
+
+        word = tk.Entry(root, font=("Arial", 12))
+        word.pack(pady=5)
+
+        search_button = tk.Button(root, text="Search", font=("Arial", 12), command=lambda: submit_choice(cs,word,3))
+        search_button.pack(pady=10)
+
+
         
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as cs:
     cs.connect(("127.0.0.1", 49999))

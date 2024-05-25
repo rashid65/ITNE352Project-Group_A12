@@ -80,8 +80,10 @@ def ServeClient(Sock_a, SockName): # Thread
                 while quitmenu2 == False:
                     HeadlineChoice = Sock_a.recv(1024).decode('ascii')
                 
-                    if HeadlineChoice == "1":
+                    if HeadlineChoice == "Search by keywords":
+                        print("im in Keyword")
                         ClientKeyword = Sock_a.recv(1024).decode('ascii')
+                        print(ClientKeyword)
                         Data = Headline_KeyWord(ClientKeyword)
                         fileName = f'A12_{ClientName}_SearchByKeyword.json'
                         savejson(fileName,Data)
