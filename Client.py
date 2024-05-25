@@ -1,4 +1,41 @@
 import socket
+import json
+
+# Detail function
+def showHeadlinesDetails(fileName):                                                                         # Convers json format data into a python list & dysplays the news
+    with open(fileName, 'r') as f:                                                                       
+        results = json.load(f)
+        articles = results["articles"]
+
+        result_list = []
+
+        for item in articles[:15]:
+            result_list.append(item['source']['name'])
+            result_list.append(item['author'])
+            result_list.append(item['title'])
+
+        num = 1
+        for i in range(0, len(result_list), 3):
+            print(num,".")
+            print(f"   Source: {result_list[i]}")
+            print(f"   Title: {result_list[i+2]}")
+            print(f"   Author: {result_list[i+1]}")
+            num += 1
+
+def showSourcesDetails(fileName):
+    with open(fileName, 'r') as f:
+        results = json.load(f)
+        sources = results["sources"]
+
+        source_list = []
+
+        for item in sources[:5]:
+            source_list.append(item['name'])
+
+        num = 1
+        for i in range(0, len(source_list)):
+            print(num,". " + source_list[i])
+            num += 1
 
 def MainClient():
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as cs:
@@ -36,15 +73,20 @@ def MainClient():
 
                     choice_Headline = input("\nChoose an option:\n")
                     
-                    if choice_Headline < "1" or choice_Headline > "7": #checking if it was a charcter
+                    if choice_Headline < "1" or choice_Headline > "5": #checking if it was a charcter
                         print("Please choose a valid number")
-                    elif int(choice_Headline) < 1 or int(choice_Headline) > 7: #checking the number range
+                    elif int(choice_Headline) < 1 or int(choice_Headline) > 5: #checking the number range
                         print("Please choose a valid number")
                     else:
                         cs.sendall(choice_Headline.encode('ascii'))
 
                     if choice_Headline == "1":                                                     # Keyword option (Headlines)
                         choice_Headline_Keyword = input("Enter the Keyword you want to search for: ")
+                        cs.sendall(choice_Headline.encode('ascii'))
+
+                        json_file = cs.recv(1024).decode('ascii')
+                        showHeadlinesDetails(json_file)
+                    
                     elif choice_Headline == "2":                                                   # Categories option (Headlines)
 
                         print("====== availble Categories ======")
@@ -65,6 +107,9 @@ def MainClient():
                         else:
                             cs.sendall(choice_Headline_Catagory.encode('ascii'))
 
+                            json_file = cs.recv(1024).decode('ascii')
+                            showHeadlinesDetails(json_file)
+
                     elif choice_Headline == "3":                                                   # country option (Headlines)
 
                         print("====== availble Countries ======")
@@ -80,16 +125,21 @@ def MainClient():
 
                         choice_Headline_Country = input("\nChoose a Country:\n")
 
-                        if choice_Headline_Country < "1" or choice_Headline_Country > "7": #checking if it was a charcter
+                        if choice_Headline_Country < "1" or choice_Headline_Country > "9": #checking if it was a charcter
                             print("Please choose a valid number")
-                        elif int(choice_Headline_Country) < 1 or int(choice_Headline_Country) > 7: #checking the number range
+                        elif int(choice_Headline_Country) < 1 or int(choice_Headline_Country) > 9: #checking the number range
                             print("Please choose a valid number")
                         else:
                             cs.sendall(choice_Headline_Country.encode('ascii'))
+                            json_file = cs.recv(1024).decode('ascii')
+                            showHeadlinesDetails(json_file)
 
                     elif choice_Headline == "4":                                                   # top Headlines option
-                        cs.sendall(choice_Headline.encode('ascii'))
-                    elif choice_Headline == "5":
+
+                        json_file = cs.recv(1024).decode('ascii')
+                        showHeadlinesDetails(json_file)
+                        
+                    elif choice_Headline == "5":                                                   # Quit option
                             goback = True
             #=====================================********SOURCE*********============================================================
             elif choice == "2":
@@ -130,6 +180,9 @@ def MainClient():
                             print("Please choose a valid number")
                         else:
                             cs.sendall(choice_Source_Catagory.encode('ascii'))
+                            json_file = cs.recv(1024).decode('ascii')
+                            showSourcesDetails(json_file)
+
                     
                     elif choice_Source == "2":                                                                       # country option (Source)
                         print("====== availble Countries ======")
@@ -145,12 +198,14 @@ def MainClient():
 
                         choice_Source_Country = input("\nChoose a Country:\n")
 
-                        if choice_Source_Country < "1" or choice_Source_Country > "7": #checking if it was a charcter
+                        if choice_Source_Country < "1" or choice_Source_Country > "9": #checking if it was a charcter
                             print("Please choose a valid number")
-                        elif int(choice_Source_Country) < 1 or int(choice_Source_Country) > 7: #checking the number range
+                        elif int(choice_Source_Country) < 1 or int(choice_Source_Country) > 9: #checking the number range
                             print("Please choose a valid number")
                         else:
                             cs.sendall(choice_Source_Country.encode('ascii'))
+                            json_file = cs.recv(1024).decode('ascii')
+                            showSourcesDetails(json_file)
                         
                     elif choice_Source == "3":                                                                        #Language option (Source)
                         print("Available Languages")
@@ -158,16 +213,18 @@ def MainClient():
                         print("2- English (en)")
                         choice_Source_Language = input("\nChoose a Language:\n")
 
-                        if choice_Source_Language < "1" or choice_Source_Language > "7": #checking if it was a charcter
+                        if choice_Source_Language < "1" or choice_Source_Language > "3": #checking if it was a charcter
                             print("Please choose a valid number")
-                        elif int(choice_Source_Language) < 1 or int(choice_Source_Language) > 7: #checking the number range
+                        elif int(choice_Source_Language) < 1 or int(choice_Source_Language) > 3: #checking the number range
                             print("Please choose a valid number")
                         else:
                             cs.sendall(choice_Source_Language.encode('ascii'))
+                            json_file = cs.recv(1024).decode('ascii')
+                            showSourcesDetails(json_file)
 
                     elif choice_Source == "4":
-                        print("smth")
-                        #do smth here
+                        json_file = cs.recv(1024).decode('ascii')
+                        showSourcesDetails(json_file)
 
                     elif choice_Source == "5":
                             goback2 = True

@@ -12,9 +12,9 @@ def NEWHeadlines():
     response = requests.get(url)
     return response.json()
 
-def savejson(fileName, data):
-    with open(fileName, 'w') as f:
-        json.dump(data, f, indent=4)
+def savejson(fileName, data):                                                                      # Generates a json file with the results stored in
+    with open(fileName, 'w') as f:                                                                 
+        json.dump(data, f, indent=4)                                                               
 
 def Headline_KeyWord(Keyword):
     GETMsg = f'https://newsapi.org/v2/top-headlines?q={Keyword}&pageSize=15&apiKey={"7558a150954e4dcaafa560b8d6f689c5"}'
@@ -78,64 +78,78 @@ def ServeClient(Sock_a, SockName): # Thread
                 quitmenu2 = False
                 while quitmenu2 == False:
                     HeadlineChoice = Sock_a.recv(1024).decode('ascii')
-                
-                    if HeadlineChoice == "1":
+                    print(f"Got message from {ClientName}: headline choice number {HeadlineChoice}")
+
+                    if HeadlineChoice == "1":                                                      # Keyword option
                         ClientKeyword = Sock_a.recv(1024).decode('ascii')
-                        Data = Headline_KeyWord(ClientKeyword)
-                        fileName = f'A12_{ClientName}_SearchByKeyword.json'
-                        savejson(fileName,Data)
-                    
-                    elif HeadlineChoice == "2":
+                        Data = Headline_KeyWord(ClientKeyword)                                     # Gets results from NewsApi
+                        fileName = f'A12_{ClientName}_SearchByKeyword.json'                         
+                        savejson(fileName,Data)   
+                        Sock_a.sendall(fileName.encode('ascii'))
+
+                    elif HeadlineChoice == "2":                                                    # Category option
                         ClientCatNum = Sock_a.recv(1024).decode('ascii')
                         ClientCat = WhichCateWasChosen(ClientCatNum)
                         Data = Headline_category(ClientCat)
                         fileName = f'A12_{ClientName}_SearchByCategory.json'
-                        savejson(fileName,Data)
-                    
-                    elif HeadlineChoice == "3":
+                        result_list = savejson(fileName,Data)   
+                        Sock_a.sendall(fileName.encode('ascii'))
+
+                    elif HeadlineChoice == "3":                                                    # Country option
                         Clientcountry = Sock_a.recv(1024).decode('ascii')
                         Data = Headline_country(Clientcountry)
                         fileName = f'A12_{ClientName}_SearchByCountry.json'
-                        savejson(fileName,Data)
+                        result_list = savejson(fileName,Data)   
+                        Sock_a.sendall(fileName.encode('ascii'))
 
-                    elif HeadlineChoice == "4":
+                    elif HeadlineChoice == "4":                                                    # Send all option
                         data = NEWHeadlines()
                         fileName = f'A12_{ClientName}_ListAllHeadlines.json'
-                        savejson(fileName,data)
+                        result_list = savejson(fileName,Data)   
+                        Sock_a.sendall(fileName.encode('ascii'))
 
-                    elif HeadlineChoice == "5":
+                    elif HeadlineChoice == "5":                                                    # Back to main menu
                         break
-                    print(f"i got ur message {ClientName} ur headline choice number {HeadlineChoice}")
+
         #---------------------------------------SOURCE---------------------------------------------------------------------------
             elif MenuChoice == "2":
                 quitmenu3 = False
                 while quitmenu3 == False:
                     SourceChoice = Sock_a.recv(1024).decode('ascii')
-                
-                    if SourceChoice == "1":
+                    print(f"i got ur message {ClientName} ur source choice number {SourceChoice}")
+
+                    if SourceChoice == "1":                                                        # Category option
                         ClientCategory = Sock_a.recv(1024).decode('ascii')
                         data = SourceCategory(ClientCategory)
-                        fileName = f'A12_{ClientName}_SorcesByCategory.json'
+                        fileName = f'A12_{ClientName}_SourcesByCategory.json'
                         savejson(fileName,data)
-                    elif SourceChoice == "2":
+                        Sock_a.sendall(fileName.encode('ascii'))
+
+
+                    elif SourceChoice == "2":                                                      # Country option
                         clientCountry = Sock_a.recv(1024).decode('ascii')
                         data = SourceCountry(clientCountry)
-                        fileName = f'A12_{ClientName}_SorcesByCountry.json'
+                        fileName = f'A12_{ClientName}_SourcesByCountry.json'
                         savejson(fileName,data)
-                    elif SourceChoice == "3":
+                        Sock_a.sendall(fileName.encode('ascii'))
+
+
+                    elif SourceChoice == "3":                                                      # Language option
                         clientlanguage = Sock_a.recv(1024).decode('ascii')
                         data = SourceCountry(clientlanguage)
-                        fileName = f'A12_{ClientName}_SorcesByLanguage.json'
+                        fileName = f'A12_{ClientName}_SourcesByLanguage.json'
                         savejson(fileName,data)
-                    elif SourceChoice == "4":
+                        Sock_a.sendall(fileName.encode('ascii'))
+
+                    elif SourceChoice == "4":                                                      # All sources option
                         data = NEWSources()
                         fileName = f'A12_{ClientName}_ListAllsources.json'
                         savejson(fileName,data)
-                    elif SourceChoice == "5":
-                        break
-                    #API code for sources
+                        Sock_a.sendall(fileName.encode('ascii'))
 
-                    print(f"i got ur message {ClientName} ur soruce choice number {SourceChoice}")
+                    elif SourceChoice == "5":                                                      # Back to main menu
+                        break
+
             elif MenuChoice == "3":
                 quitmenu1 = False
                 continue
