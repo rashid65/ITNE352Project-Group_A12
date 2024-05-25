@@ -74,7 +74,8 @@ def ServeClient(Sock_a, SockName): # Thread
         quitmenu1 = True
         while quitmenu1:
             MenuChoice = Sock_a.recv(1024).decode('ascii') #here it will receive either 1 for headlines or 2 for sources
-            if MenuChoice == "1":
+            if MenuChoice == "Search Headlines":
+                print("im in hedaings")
                 quitmenu2 = False
                 while quitmenu2 == False:
                     HeadlineChoice = Sock_a.recv(1024).decode('ascii')
@@ -107,7 +108,8 @@ def ServeClient(Sock_a, SockName): # Thread
                         break
                     print(f"i got ur message {ClientName} ur headline choice number {HeadlineChoice}")
         #---------------------------------------SOURCE---------------------------------------------------------------------------
-            elif MenuChoice == "2":
+            elif MenuChoice == "List of Soarces":
+                print("im in Sources")
                 quitmenu3 = False
                 while quitmenu3 == False:
                     SourceChoice = Sock_a.recv(1024).decode('ascii')
