@@ -26,10 +26,10 @@ def Headline_category(category):
     response = requests.get(GETMsg)
     return response.json()
 
-def WhichCateWasChosen(Num):
-    Num = int(Num) - 1
-    categoryList = ["business", "entertainment", "general", "health", "science", "sports", "technology"]
-    return categoryList[Num]
+# def WhichCateWasChosen(Num):
+#     Num = int(Num) - 1
+#     categoryList = ["business", "entertainment", "general", "health", "science", "sports", "technology"]
+#     return categoryList[Num]
 
 def Headline_country(countryNum):
     countrylist = ["au","nz","ca","ae","sa","gb","us","eg","ma"]
@@ -52,7 +52,7 @@ def SourceCategory(categoryNum):
     return response.json()
 
 def SourceCountry(countryNum):
-    countryList = ["au","NZ","ca","ae","sa","gb","us","eg","ma"]
+    countryList = ["au","nz","ca","ae","sa","gb","us","eg","ma"]
     country = countryList[int(countryNum)-1]
     GETMsg = f'https://newsapi.org/v2/top-headlines/sources?country={country}&pageSize=15&apiKey={"7558a150954e4dcaafa560b8d6f689c5"}'
     response = requests.get(GETMsg)
@@ -88,10 +88,11 @@ def ServeClient(Sock_a, SockName): # Thread
                         fileName = f'A12_{ClientName}_SearchByKeyword.json'
                         savejson(fileName,Data)
                     
-                    elif HeadlineChoice == "2":
+                    elif HeadlineChoice == "Search by category":
+                        print("im in category")
                         ClientCatNum = Sock_a.recv(1024).decode('ascii')
-                        ClientCat = WhichCateWasChosen(ClientCatNum)
-                        Data = Headline_category(ClientCat)
+                        # ClientCat = WhichCateWasChosen(ClientCatNum)
+                        Data = Headline_category(ClientCatNum)
                         fileName = f'A12_{ClientName}_SearchByCategory.json'
                         savejson(fileName,Data)
                     
@@ -106,7 +107,7 @@ def ServeClient(Sock_a, SockName): # Thread
                         fileName = f'A12_{ClientName}_ListAllHeadlines.json'
                         savejson(fileName,data)
 
-                    elif HeadlineChoice == "5":
+                    elif HeadlineChoice == "Back to main menu":
                         break
                     print(f"i got ur message {ClientName} ur headline choice number {HeadlineChoice}")
         #---------------------------------------SOURCE---------------------------------------------------------------------------

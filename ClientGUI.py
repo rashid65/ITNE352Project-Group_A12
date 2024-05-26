@@ -43,6 +43,8 @@ def submit_choice(cs, choice, cases):
         keyword = choice.get()
         keyword = KeywordFormat(keyword)
         cs.sendall(keyword.encode('ascii'))
+    if cases == 4:
+        HandelSource(choice)
 
 def display_SecondMenu(Menu):
     for widget in root.winfo_children():
@@ -63,6 +65,27 @@ def display_SecondMenu(Menu):
         submit_button = tk.Button(root, text="Submit", font=("Arial", 12), command=lambda: submit_choice(cs, selected_item.get(),2))
         submit_button.pack(pady=10)
 
+        back_button = tk.Button(root, text="Go Back", font=("Arial", 12), command=lambda: display_MainMenu())
+        back_button.pack(pady=10)
+    
+    if Menu == "List of Sources":
+        label = tk.Label(root, text="Choose one option from the below menu:", font=("Arial", 14))
+        label.pack(pady=10)
+
+        choices = ["Search by category", "Search by country","Search by language","List all","Back to main menu"]
+        selected_item = tk.StringVar()
+        selected_item.set(choices[0])
+
+        for choice in choices:
+            rbb = tk.Radiobutton(root, text=choice, variable=selected_item, value=choice, font=("Arial", 12))
+            rbb.pack(anchor=tk.W, padx=20)
+
+        submit_button = tk.Button(root, text="Submit", font=("Arial", 12), command=lambda: submit_choice(cs, selected_item.get(),4))
+        submit_button.pack(pady=10)
+
+        back_button = tk.Button(root, text="Go Back", font=("Arial", 12), command=lambda: display_MainMenu())
+        back_button.pack(pady=10)
+
 #function to chnage the spaces into plus for the GET message
 def KeywordFormat(input):
     trimmed = input.strip()
@@ -71,6 +94,7 @@ def KeywordFormat(input):
 
 #function to handel all Headline optiions
 def Handel_Headline(choice):
+                                                         #keyword option
     if choice == "Search by keywords":
         label = tk.Label(root, text="Please enter what you want to search for:", font=("Arial", 14))
         label.pack(pady=10)
@@ -80,6 +104,81 @@ def Handel_Headline(choice):
 
         search_button = tk.Button(root, text="Search", font=("Arial", 12), command=lambda: submit_choice(cs,word,3))
         search_button.pack(pady=10)
+
+        back_button = tk.Button(root, text="Go Back", font=("Arial", 12), command=lambda: display_SecondMenu("Search Headlines"))
+        back_button.pack(pady=10)
+                                                         #category option
+    if choice == "Search by category":
+        for widget in root.winfo_children():
+            widget.destroy()
+
+        label = tk.Label(root, text="Choose one option from the below menu:", font=("Arial", 14))
+        label.pack(pady=10)
+
+        choices = ["business", "entertainment", "general", "health", "science", "sports", "technology"]
+        selected_item = tk.StringVar()
+        selected_item.set(choices[0])
+
+        for choice in choices:
+            rbb = tk.Radiobutton(root, text=choice, variable=selected_item, value=choice, font=("Arial", 12))
+            rbb.pack(anchor=tk.W, padx=20)
+
+        submit_button = tk.Button(root, text="Submit", font=("Arial", 12), command=lambda: submit_choice(cs, selected_item.get(),4))
+        submit_button.pack(pady=10)
+                                                    #back button
+        back_button = tk.Button(root, text="Go Back", font=("Arial", 12), command=lambda: display_SecondMenu("Search Headlines"))
+        back_button.pack(pady=10)
+                                                            # country optin
+    if choice == "Search by country":
+        for widget in root.winfo_children():
+            widget.destroy()
+
+        label = tk.Label(root, text="Choose one option from the below menu:", font=("Arial", 14))
+        label.pack(pady=10)
+
+        choices = ["au","nz","ca","ae","sa","gb","us","eg","ma"]
+        selected_item = tk.StringVar()
+        selected_item.set(choices[0])
+
+        for choice in choices:
+            rbb = tk.Radiobutton(root, text=choice, variable=selected_item, value=choice, font=("Arial", 12))
+            rbb.pack(anchor=tk.W, padx=20)
+
+        submit_button = tk.Button(root, text="Submit", font=("Arial", 12), command=lambda: submit_choice(cs, selected_item.get(),4))
+        submit_button.pack(pady=10)
+
+        back_button = tk.Button(root, text="Go Back", font=("Arial", 12), command=lambda: display_SecondMenu("Search Headlines"))
+        back_button.pack(pady=10)
+                                                            #List all new headlines option
+    if choice == "List all new headlines":
+         for widget in root.winfo_children():
+            widget.destroy()
+            #++++++++++++++++++++++ view the news ++++++++++++++++++++
+    if choice == "Back to main menu":
+        submit_choice(cs,choice,0)
+        display_MainMenu()
+
+def HandelSource(choice):
+                                                    #Category option
+     if choice == "Search by category":
+        for widget in root.winfo_children():
+            widget.destroy()
+
+        label = tk.Label(root, text="Choose one option from the below menu:", font=("Arial", 14))
+        label.pack(pady=10)
+
+        choices = ["business", "entertainment", "general", "health", "science", "sports", "technology"]
+        selected_item = tk.StringVar()
+        selected_item.set(choices[0])
+
+        for choice in choices:
+            rbb = tk.Radiobutton(root, text=choice, variable=selected_item, value=choice, font=("Arial", 12))
+            rbb.pack(anchor=tk.W, padx=20)
+
+        submit_button = tk.Button(root, text="Submit", font=("Arial", 12), command=lambda: submit_choice(cs, selected_item.get(),4))
+        submit_button.pack(pady=10)
+        back_button = tk.Button(root, text="Go Back", font=("Arial", 12), command=lambda: display_SecondMenu("Search Headlines"))
+        back_button.pack(pady=10)
 
 
         
