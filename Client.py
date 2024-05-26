@@ -1,9 +1,10 @@
 import socket
 import json
+import datetime
 
 # Detail function
 def showHeadlinesDetails(fileName):                                                                         # Convers json format data into a python list & dysplays the news
-    with open(fileName, 'r') as f:                                                                       
+    with open(fileName, 'r') as f:                                                                          # Shows details about the news, and (if chosen) shows further details about a specific result
         results = json.load(f)
         articles = results["articles"]
 
@@ -21,6 +22,31 @@ def showHeadlinesDetails(fileName):                                             
             print(f"   Title: {result_list[i+2]}")
             print(f"   Author: {result_list[i+1]}")
             num += 1
+
+    quitloop = False
+    while quitloop == False:
+
+        details_choice = input("choose a result to be displayed: \n")
+
+        further_details = []
+        result = articles[int(details_choice)-1]
+
+        try:
+            published_datetime = datetime.datetime.strptime(result['publishedAt'], "%Y-%m-%dT%H:%M:%SZ")
+        except ValueError:
+            published_datetime = datetime.datetime.fromisoformat(result['publishedAt'])        
+            
+        publishing_date = published_datetime.date()
+        publishing_time = published_datetime.time()
+
+        print(f"\nSource Name: {result['source']['name']}")
+        print(f"author : {result['author']}")
+        print(f"Title: {result['title']}")
+        print(f"URL: {result['url']}")
+        print(f"Description: {result['description']}")
+        print(f"Publishing Date: {publishing_date}")
+        print(f"Publishing Time: {publishing_time}\n")
+        quitloop = True
 
 def showSourcesDetails(fileName):
     with open(fileName, 'r') as f:
@@ -162,7 +188,7 @@ def MainClient():
                     else:
                         cs.sendall(choice_Source.encode('ascii'))
                         
-                    if choice_Source == "1":                                                                         # Categories option (Source)
+                    if choice_Source == "1":                                                       # Categories option (Source)
                         print("====== availble Categories ======")
                         print("1- Business")
                         print("2- Entertainment")
@@ -184,7 +210,7 @@ def MainClient():
                             showSourcesDetails(json_file)
 
                     
-                    elif choice_Source == "2":                                                                       # country option (Source)
+                    elif choice_Source == "2":                                                     # country option (Source)
                         print("====== availble Countries ======")
                         print("1- Australia (au)")
                         print("2- New Zealand (NZ)")
@@ -207,7 +233,7 @@ def MainClient():
                             json_file = cs.recv(1024).decode('ascii')
                             showSourcesDetails(json_file)
                         
-                    elif choice_Source == "3":                                                                        #Language option (Source)
+                    elif choice_Source == "3":                                                     #Language option (Source)
                         print("Available Languages")
                         print("1- Arabic (ar)")
                         print("2- English (en)")
