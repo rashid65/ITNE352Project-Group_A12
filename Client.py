@@ -48,8 +48,8 @@ def showHeadlinesDetails(fileName):                                             
         print(f"Publishing Time: {publishing_time}\n")
         quitloop = True
 
-def showSourcesDetails(fileName):
-    with open(fileName, 'r') as f:
+def showSourcesDetails(fileName):                                                                           # Convers json format data into a python list & dysplays the sources
+    with open(fileName, 'r') as f:                                                                          # Shows details about the sources, and (if chosen) shows further details about a specific result
         results = json.load(f)
         sources = results["sources"]
 
@@ -62,6 +62,22 @@ def showSourcesDetails(fileName):
         for i in range(0, len(source_list)):
             print(num,". " + source_list[i])
             num += 1
+
+        quitloop = False
+        while quitloop == False:
+
+            details_choice = input("choose a source to be displayed: \n")
+
+            further_details = []
+            result = sources[int(details_choice)-1]
+
+            print(f"\nSource Name: {result['name']}")
+            print(f"Country : {result['country']}")
+            print(f"Description: {result['description']}")
+            print(f"URL: {result['url']}")
+            print(f"Category: {result['category']}")
+            print(f"Language: {result['language']}")
+            quitloop = True
 
 def MainClient():
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as cs:
