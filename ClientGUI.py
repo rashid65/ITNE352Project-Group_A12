@@ -68,9 +68,6 @@ def display_SecondMenu(Menu):
 
         submit_button = tk.Button(root, text="Next", font=("Arial", 12), command=lambda: submit_choice(cs, selected_item.get(),2))
         submit_button.pack(pady=10)
-
-        back_button = tk.Button(root, text="Go Back", font=("Arial", 12), command=lambda: display_MainMenu())
-        back_button.pack(pady=10)
     
     if Menu == "List of Sources":
         label = tk.Label(root, text="Choose one option from the below menu:", font=("Arial", 14))
@@ -231,8 +228,7 @@ def HandelSource(choice):
         submit_choice(cs,choice,0)
         display_MainMenu()
 
-
-        
+          
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as cs:
     cs.connect(("127.0.0.1", 49999))
     # Create the main window

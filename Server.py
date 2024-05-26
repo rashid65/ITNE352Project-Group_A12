@@ -78,8 +78,8 @@ def ServeClient(Sock_a, SockName): # Thread
                     
                     if HeadlineChoice == "Search by category":
                         print("im in category")
-                        ClientCatNum = Sock_a.recv(1024).decode('ascii')
-                        Data = Headline_category(ClientCatNum)
+                        ClientCat = Sock_a.recv(1024).decode('ascii')
+                        Data = Headline_category(ClientCat)
                         fileName = f'A12_{ClientName}_SearchByCategory.json'
                         savejson(fileName,Data)
                     
