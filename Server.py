@@ -26,14 +26,8 @@ def Headline_category(category):
     response = requests.get(GETMsg)
     return response.json()
 
-# def WhichCateWasChosen(Num):
-#     Num = int(Num) - 1
-#     categoryList = ["business", "entertainment", "general", "health", "science", "sports", "technology"]
-#     return categoryList[Num]
-
 def Headline_country(countryNum):
-    countrylist = ["au","nz","ca","ae","sa","gb","us","eg","ma"]
-    country = countrylist[int(countryNum)-1]
+    country = countryNum
     GETMsg = f'https://newsapi.org/v2/top-headlines?country={country}&pageSize=15&apiKey={"7558a150954e4dcaafa560b8d6f689c5"}'
     response = requests.get(GETMsg)
     return response.json()
@@ -44,23 +38,17 @@ def NEWSources():
     response = requests.get(GETMsg)
     return response.json()
 
-def SourceCategory(categoryNum):
-    categorylist = ["business", "entertainment", "general", "health", "science", "sports", "technology"]
-    category = categorylist[int(categoryNum)-1]
+def SourceCategory(category):
     GETMsg = f'https://newsapi.org/v2/top-headlines/sources?category={category}&pageSize=15&apiKey={"7558a150954e4dcaafa560b8d6f689c5"}'
     response = requests.get(GETMsg)
     return response.json()
 
-def SourceCountry(countryNum):
-    countryList = ["au","nz","ca","ae","sa","gb","us","eg","ma"]
-    country = countryList[int(countryNum)-1]
+def SourceCountry(country):
     GETMsg = f'https://newsapi.org/v2/top-headlines/sources?country={country}&pageSize=15&apiKey={"7558a150954e4dcaafa560b8d6f689c5"}'
     response = requests.get(GETMsg)
     return response.json()
 
-def Sourcelanguage(languageNum):
-    languagelist = ["ar","en"]
-    language = languagelist[int(languageNum)-1]
+def Sourcelanguage(language):
     GETMsg = f'https://newsapi.org/v2/top-headlines/sources?language={language}&pageSize=15&apiKey={"7558a150954e4dcaafa560b8d6f689c5"}'
     response = requests.get(GETMsg)
     return response.json()
@@ -88,60 +76,59 @@ def ServeClient(Sock_a, SockName): # Thread
                         fileName = f'A12_{ClientName}_SearchByKeyword.json'
                         savejson(fileName,Data)
                     
-                    elif HeadlineChoice == "Search by category":
+                    if HeadlineChoice == "Search by category":
                         print("im in category")
                         ClientCatNum = Sock_a.recv(1024).decode('ascii')
-                        # ClientCat = WhichCateWasChosen(ClientCatNum)
                         Data = Headline_category(ClientCatNum)
                         fileName = f'A12_{ClientName}_SearchByCategory.json'
                         savejson(fileName,Data)
                     
-                    elif HeadlineChoice == "3":
+                    if HeadlineChoice == "Search by country":
                         Clientcountry = Sock_a.recv(1024).decode('ascii')
                         Data = Headline_country(Clientcountry)
                         fileName = f'A12_{ClientName}_SearchByCountry.json'
                         savejson(fileName,Data)
 
-                    elif HeadlineChoice == "4":
+                    if HeadlineChoice == "List all new headlines":
                         data = NEWHeadlines()
                         fileName = f'A12_{ClientName}_ListAllHeadlines.json'
                         savejson(fileName,data)
 
-                    elif HeadlineChoice == "Back to main menu":
+                    if HeadlineChoice == "Back to main menu":
                         break
                     print(f"i got ur message {ClientName} ur headline choice number {HeadlineChoice}")
         #---------------------------------------SOURCE---------------------------------------------------------------------------
-            elif MenuChoice == "List of Soarces":
+            if MenuChoice == "List of Sources":
                 print("im in Sources")
                 quitmenu3 = False
                 while quitmenu3 == False:
                     SourceChoice = Sock_a.recv(1024).decode('ascii')
                 
-                    if SourceChoice == "1":
+                    if SourceChoice == "Search by category":
                         ClientCategory = Sock_a.recv(1024).decode('ascii')
                         data = SourceCategory(ClientCategory)
                         fileName = f'A12_{ClientName}_SorcesByCategory.json'
                         savejson(fileName,data)
-                    elif SourceChoice == "2":
+                    if SourceChoice == "Search by country":
                         clientCountry = Sock_a.recv(1024).decode('ascii')
                         data = SourceCountry(clientCountry)
                         fileName = f'A12_{ClientName}_SorcesByCountry.json'
                         savejson(fileName,data)
-                    elif SourceChoice == "3":
+                    if SourceChoice == "Search by language":
                         clientlanguage = Sock_a.recv(1024).decode('ascii')
-                        data = SourceCountry(clientlanguage)
+                        data = Sourcelanguage(clientlanguage)
                         fileName = f'A12_{ClientName}_SorcesByLanguage.json'
                         savejson(fileName,data)
-                    elif SourceChoice == "4":
+                    if SourceChoice == "List all":
                         data = NEWSources()
                         fileName = f'A12_{ClientName}_ListAllsources.json'
                         savejson(fileName,data)
-                    elif SourceChoice == "5":
+                    if SourceChoice == "Back to main menu":
                         break
                     #API code for sources
 
                     print(f"i got ur message {ClientName} ur soruce choice number {SourceChoice}")
-            elif MenuChoice == "3":
+            if MenuChoice == "Quit":
                 quitmenu1 = False
                 continue
 

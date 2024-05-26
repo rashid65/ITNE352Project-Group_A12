@@ -29,10 +29,14 @@ def display_MainMenu():
         rb.pack(anchor=tk.W, padx=20)
 
     # Create and place the submit button for the menu
-    submit_button = tk.Button(root, text="Submit", font=("Arial", 12), command=lambda: submit_choice(cs, selected_item.get(),1))
+    submit_button = tk.Button(root, text="Next", font=("Arial", 12), command=lambda: submit_choice(cs, selected_item.get(),1))
     submit_button.pack(pady=10)
 
 def submit_choice(cs, choice, cases):
+    if choice == "Quit": #if user quit
+        cs.sendall(choice.encode('ascii'))
+        root.destroy()
+        return
     if cases != 3: #to not be confused with keyword
         cs.sendall(choice.encode('ascii')) # sends to the server each time it accese it
     if cases == 1:
@@ -62,7 +66,7 @@ def display_SecondMenu(Menu):
             rbb = tk.Radiobutton(root, text=choice, variable=selected_item, value=choice, font=("Arial", 12))
             rbb.pack(anchor=tk.W, padx=20)
 
-        submit_button = tk.Button(root, text="Submit", font=("Arial", 12), command=lambda: submit_choice(cs, selected_item.get(),2))
+        submit_button = tk.Button(root, text="Next", font=("Arial", 12), command=lambda: submit_choice(cs, selected_item.get(),2))
         submit_button.pack(pady=10)
 
         back_button = tk.Button(root, text="Go Back", font=("Arial", 12), command=lambda: display_MainMenu())
@@ -80,11 +84,8 @@ def display_SecondMenu(Menu):
             rbb = tk.Radiobutton(root, text=choice, variable=selected_item, value=choice, font=("Arial", 12))
             rbb.pack(anchor=tk.W, padx=20)
 
-        submit_button = tk.Button(root, text="Submit", font=("Arial", 12), command=lambda: submit_choice(cs, selected_item.get(),4))
+        submit_button = tk.Button(root, text="Next", font=("Arial", 12), command=lambda: submit_choice(cs, selected_item.get(),4))
         submit_button.pack(pady=10)
-
-        back_button = tk.Button(root, text="Go Back", font=("Arial", 12), command=lambda: display_MainMenu())
-        back_button.pack(pady=10)
 
 #function to chnage the spaces into plus for the GET message
 def KeywordFormat(input):
@@ -160,7 +161,7 @@ def Handel_Headline(choice):
 
 def HandelSource(choice):
                                                     #Category option
-     if choice == "Search by category":
+    if choice == "Search by category":
         for widget in root.winfo_children():
             widget.destroy()
 
@@ -177,8 +178,58 @@ def HandelSource(choice):
 
         submit_button = tk.Button(root, text="Submit", font=("Arial", 12), command=lambda: submit_choice(cs, selected_item.get(),4))
         submit_button.pack(pady=10)
-        back_button = tk.Button(root, text="Go Back", font=("Arial", 12), command=lambda: display_SecondMenu("Search Headlines"))
+        back_button = tk.Button(root, text="Go Back", font=("Arial", 12), command=lambda: display_SecondMenu("List of Sources"))
         back_button.pack(pady=10)
+                                                # country option
+    if choice == "Search by country":
+        for widget in root.winfo_children():
+            widget.destroy()
+
+        label = tk.Label(root, text="Choose one option from the below menu:", font=("Arial", 14))
+        label.pack(pady=10)
+
+        choices = ["au","nz","ca","ae","sa","gb","us","eg","ma"]
+        selected_item = tk.StringVar()
+        selected_item.set(choices[0])
+
+        for choice in choices:
+            rbb = tk.Radiobutton(root, text=choice, variable=selected_item, value=choice, font=("Arial", 12))
+            rbb.pack(anchor=tk.W, padx=20)
+
+        submit_button = tk.Button(root, text="Submit", font=("Arial", 12), command=lambda: submit_choice(cs, selected_item.get(),4))
+        submit_button.pack(pady=10)
+
+        back_button = tk.Button(root, text="Go Back", font=("Arial", 12), command=lambda: display_SecondMenu("List of Sources"))
+        back_button.pack(pady=10)
+                                                    # Language option
+    if choice == "Search by language":
+        for widget in root.winfo_children():
+            widget.destroy()
+
+        label = tk.Label(root, text="Choose one option from the below menu:", font=("Arial", 14))
+        label.pack(pady=10)
+
+        choices = ["ar","en"]
+        selected_item = tk.StringVar()
+        selected_item.set(choices[0])
+
+        for choice in choices:
+            rbb = tk.Radiobutton(root, text=choice, variable=selected_item, value=choice, font=("Arial", 12))
+            rbb.pack(anchor=tk.W, padx=20)
+
+        submit_button = tk.Button(root, text="Submit", font=("Arial", 12), command=lambda: submit_choice(cs, selected_item.get(),4))
+        submit_button.pack(pady=10)
+
+        back_button = tk.Button(root, text="Go Back", font=("Arial", 12), command=lambda: display_SecondMenu("List of Sources"))
+        back_button.pack(pady=10)
+
+    if choice == "List all":
+         for widget in root.winfo_children():
+            widget.destroy()
+            #++++++++++++++++++++++ view the news ++++++++++++++++++++
+    if choice == "Back to main menu":
+        submit_choice(cs,choice,0)
+        display_MainMenu()
 
 
         
