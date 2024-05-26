@@ -5,3 +5,4 @@
 - The choice sending issue might be from the while loop in client (or a logic error), or it might be from the server side sice it doesn't have a loop to recieve every time (idk just a wild guess). **Must be checked**.
 - list all new headlines **doesnt work changed it to us**
 - Check numbers and characters' errors in options
+- **List all headlines doesn't work HELP**
