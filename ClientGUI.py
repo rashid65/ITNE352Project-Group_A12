@@ -227,7 +227,7 @@ def submit_choice(cs, choice, cases):
         HandelSource(choice)
     
 def final_Submit(type,choice,cs,woord):
-    if type == "keyword":
+    if woord == "keyword":
         keyword = choice.get()
         keyword = KeywordFormat(keyword)
         cs.sendall(keyword.encode('ascii'))
@@ -295,7 +295,7 @@ def Handel_Headline(choice):
         word = tk.Entry(root, font=("Arial", 12))
         word.pack(pady=5)
 
-        search_button = tk.Button(root, text="Search", font=("Arial", 12), command=lambda: final_Submit("Headline",word,cs,True))
+        search_button = tk.Button(root, text="Search", font=("Arial", 12), command=lambda: final_Submit("Headline",word,cs,"keyword"))
         search_button.pack(pady=10)
 
                                                          #category option
