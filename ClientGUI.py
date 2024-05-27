@@ -184,27 +184,59 @@ def display_MainMenu():
     submit_button = tk.Button(root, text="Next", font=("Arial", 12), command=lambda: submit_choice(cs, selected_item.get(),1))
     submit_button.pack(pady=10)
 
+def find_index(lst, element):
+    try:
+        return lst.index(element)
+    except ValueError:
+        return -1
+
+def Shortcut(choice, type):
+    if type == "country":
+        countriesShort = ["au","nz","ca","ae","sa","gb","us","eg","ma"]
+        countries = ["Australia","New Zealand","Canada","United Arab Emirates","Saudi Arabia","United Kingdom","United States","Egypt","Morocco"]
+        index = find_index(countries,choice)
+        return countriesShort[index]
+    if type == "langugae":
+        short = ["ar","en"]
+        full = ["Arabic","English"]
+        index = find_index(full,choice)
+        return short[index]
+
+
 def submit_choice(cs, choice, cases):
     if choice == "Quit": #if user quit
         cs.sendall(choice.encode('ascii'))
         root.destroy()
         return
-    if cases != 3: #to not be confused with keyword
+    if cases == "country":
+        shortChoice = Shortcut(choice,"country")
+        cs.sendall(choice.encode('ascii'))
+        return
+    if cases == "langugae":
+        shortChoice = Shortcut(choice,"langugae")
+        cs.sendall(choice.encode('ascii'))
+        return
+    if cases != 3: #to not be confused with keyword and countries/language
         cs.sendall(choice.encode('ascii')) # sends to the server each time it accese it
     if cases == 1:
         display_SecondMenu(choice) # moves from main menu to what the user chooses
     if cases == 2:
         Handel_Headline(choice) # moves to which option the user chose under Headlines
+        
     if cases == 4:
         HandelSource(choice)
     
 def final_Submit(type,choice,cs,woord):
-    if woord:
+    if type == "keyword":
         keyword = choice.get()
         keyword = KeywordFormat(keyword)
         cs.sendall(keyword.encode('ascii'))
-    else:
-        cs.sendall(choice.encode('ascii'))
+    if woord == "country":
+        shortChoice = Shortcut(choice,"country")
+        cs.sendall(shortChoice.encode('ascii'))
+    if woord == "language":
+        shortChoice = Shortcut(choice,"langugae")
+        cs.sendall(shortChoice.encode('ascii'))
     file = cs.recv(1024).decode('ascii')
     if type == "Headline":
         showHeadlines(file)
@@ -282,7 +314,7 @@ def Handel_Headline(choice):
             rbb = tk.Radiobutton(root, text=choice, variable=selected_item, value=choice, font=("Arial", 12))
             rbb.pack(anchor=tk.W, padx=20)
 
-        submit_button = tk.Button(root, text="Submit", font=("Arial", 12), command=lambda: final_Submit("Headline",selected_item.get(),cs,False))
+        submit_button = tk.Button(root, text="Submit", font=("Arial", 12), command=lambda: final_Submit("Headline",selected_item.get(),cs,None))
         submit_button.pack(pady=10)
                                                             # country optin
     if choice == "Search by country":
@@ -292,7 +324,7 @@ def Handel_Headline(choice):
         label = tk.Label(root, text="Choose one option from the below menu:", font=("Arial", 14))
         label.pack(pady=10)
 
-        choices = ["au","nz","ca","ae","sa","gb","us","eg","ma"]
+        choices = ["Australia","New Zealand","Canada","United Arab Emirates","Saudi Arabia","United Kingdom","United States","Egypt","Morocco"]
         selected_item = tk.StringVar()
         selected_item.set(choices[0])
 
@@ -300,7 +332,7 @@ def Handel_Headline(choice):
             rbb = tk.Radiobutton(root, text=choice, variable=selected_item, value=choice, font=("Arial", 12))
             rbb.pack(anchor=tk.W, padx=20)
 
-        submit_button = tk.Button(root, text="Submit", font=("Arial", 12), command=lambda: final_Submit("Headline",selected_item.get(),cs,False))
+        submit_button = tk.Button(root, text="Submit", font=("Arial", 12), command=lambda: final_Submit("Headline",selected_item.get(),cs,"country"))
         submit_button.pack(pady=10)
 
                                                             #List all new headlines option
@@ -340,7 +372,7 @@ def HandelSource(choice):
         label = tk.Label(root, text="Choose one option from the below menu:", font=("Arial", 14))
         label.pack(pady=10)
 
-        choices = ["au","nz","ca","ae","sa","gb","us","eg","ma"]
+        choices = ["Australia","New Zealand","Canada","United Arab Emirates","Saudi Arabia","United Kingdom","United States","Egypt","Morocco"]
         selected_item = tk.StringVar()
         selected_item.set(choices[0])
 
@@ -348,7 +380,7 @@ def HandelSource(choice):
             rbb = tk.Radiobutton(root, text=choice, variable=selected_item, value=choice, font=("Arial", 12))
             rbb.pack(anchor=tk.W, padx=20)
 
-        submit_button = tk.Button(root, text="Submit", font=("Arial", 12), command=lambda: final_Submit("Source",selected_item.get(),cs,False))
+        submit_button = tk.Button(root, text="Submit", font=("Arial", 12), command=lambda: final_Submit("Source",selected_item.get(),cs,"country"))
         submit_button.pack(pady=10)
 
                                                     # Language option
@@ -359,7 +391,7 @@ def HandelSource(choice):
         label = tk.Label(root, text="Choose one option from the below menu:", font=("Arial", 14))
         label.pack(pady=10)
 
-        choices = ["ar","en"]
+        choices = ["Arabic","English"]
         selected_item = tk.StringVar()
         selected_item.set(choices[0])
 
@@ -367,7 +399,7 @@ def HandelSource(choice):
             rbb = tk.Radiobutton(root, text=choice, variable=selected_item, value=choice, font=("Arial", 12))
             rbb.pack(anchor=tk.W, padx=20)
 
-        submit_button = tk.Button(root, text="Submit", font=("Arial", 12), command=lambda: final_Submit("Source",selected_item.get(),cs,False))
+        submit_button = tk.Button(root, text="Submit", font=("Arial", 12), command=lambda: final_Submit("Source",selected_item.get(),cs,"language"))
         submit_button.pack(pady=10)
 
     if choice == "List all":
@@ -385,7 +417,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as cs:
     # Create the main window
     root = tk.Tk()
     root.title("Insert Your Name")
-    root.geometry("600x500")
+    root.geometry("600x650")
     root.resizable(True, True)
 
     # Create and place the label

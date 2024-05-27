@@ -142,7 +142,7 @@ def ServeClient(Sock_a, SockName): # Thread
                         clientCountry = Sock_a.recv(1024).decode('ascii')
                         data = SourceCountry(clientCountry)
                         fileName = f'A12_{ClientName}_SorcesByCountry.json'
-                        print(f'clinet: {ClientName}, has requested source search by country ({Clientcountry})')
+                        print(f'clinet: {ClientName}, has requested source search by country ({clientCountry})')
                         savejson(fileName,data)
                         Sock_a.sendall(fileName.encode('ascii'))
                         if quitMe(Sock_a,ClientName):
