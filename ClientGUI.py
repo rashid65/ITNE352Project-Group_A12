@@ -1,6 +1,158 @@
 import tkinter as tk
 from tkinter import messagebox
 import socket
+import json
+import datetime
+
+def create_scrollable_frame(root):
+    # Create a canvas widget with a vertical scrollbar
+    canvas = tk.Canvas(root)
+    scrollbar = tk.Scrollbar(root, orient="vertical", command=canvas.yview)
+    scrollbar.pack(side="right", fill="y")
+    canvas.pack(side="left", fill="both", expand=True)
+    canvas.configure(yscrollcommand=scrollbar.set)
+
+    # Create a frame inside the canvas which will hold the widgets
+    frame = tk.Frame(canvas)
+    canvas.create_window((0, 0), window=frame, anchor="nw")
+
+    # Function to update the scroll region of the canvas
+    def _on_frame_configure(event):
+        canvas.configure(scrollregion=canvas.bbox("all"))
+
+    frame.bind("<Configure>", _on_frame_configure)
+
+    return frame
+
+# Detail function
+def showHeadlines(fileName):                                                                         # Convers json format data into a python list & dysplays the news
+    frame = create_scrollable_frame(root)
+
+    with open(fileName, 'r') as f:                                                                          # Shows details about the news, and (if chosen) shows further details about a specific result
+        results = json.load(f)
+        articles = results["articles"]
+
+        result_list = []
+
+        for item in articles[:15]:
+            result_list.append(item['source']['name'])
+            result_list.append(item['author'])
+            result_list.append(item['title'])
+
+        num = 1
+        formatted_results = []
+        for i in range(0, len(result_list), 3):
+            formatted_result = f"{num}. \n   Source: {result_list[i]}\n   Title: {result_list[i+2]}\n   Author: {result_list[i+1]}"
+            formatted_results.append(formatted_result)
+            num += 1
+        #GUI starts here
+        for widget in frame.winfo_children():
+            widget.destroy()
+
+        label = tk.Label(frame, text="Choose one Headline from the below menu to view more deatils:", font=("Arial", 14))
+        label.pack(pady=10)
+
+        selected_item = tk.IntVar()
+        selected_item.set(1)  # Default to the first option
+
+        for i, result in enumerate(formatted_results, 1):
+            rbb = tk.Radiobutton(frame, text=result, variable=selected_item, value=i, font=("Arial", 12), wraplength=500)
+            rbb.pack(anchor="w", padx=20, pady=10)
+
+        submit_button = tk.Button(frame, text="Next", font=("Arial", 12), command=lambda: HeadlineDetails(selected_item.get(), articles))
+        submit_button.pack(pady=10)
+
+def HeadlineDetails(choice, articles):
+    result = articles[choice - 1]
+
+    try:
+        published_datetime = datetime.datetime.strptime(result['publishedAt'], "%Y-%m-%dT%H:%M:%SZ")
+    except ValueError:
+        published_datetime = datetime.datetime.fromisoformat(result['publishedAt'])        
+        
+    publishing_date = published_datetime.date()
+    publishing_time = published_datetime.time()
+
+    for widget in root.winfo_children():
+        widget.destroy()
+
+    label = tk.Label(root, text=f"Source Name: {result['source']['name']}", font=("Arial", 14), wraplength=500)
+    label.pack(anchor="w", padx=20, pady=10)
+    label = tk.Label(root, text=f"Author: {result['author']}", font=("Arial", 12), wraplength=500)
+    label.pack(anchor="w", padx=20, pady=10)
+    label = tk.Label(root, text=f"Title: {result['title']}", font=("Arial", 12), wraplength=500)
+    label.pack(anchor="w", padx=20, pady=10)
+    label = tk.Label(root, text=f"URL: {result['url']}", font=("Arial", 12), wraplength=500)
+    label.pack(anchor="w", padx=20, pady=10)
+    label = tk.Label(root, text=f"Description: {result['description']}", font=("Arial", 12), wraplength=500)
+    label.pack(anchor="w", padx=20, pady=10)
+    label = tk.Label(root, text=f"Publishing Date: {publishing_date}", font=("Arial", 12), wraplength=500)
+    label.pack(anchor="w", padx=20, pady=10)
+    label = tk.Label(root, text=f"Publishing Time: {publishing_time}", font=("Arial", 12), wraplength=500)
+    label.pack(anchor="w", padx=20, pady=10)
+
+    quit_button = tk.Button(root, text="Quit", font=("Arial", 12), command=lambda: submit_choice(cs, "Quit", 0))
+    quit_button.pack(pady=10)
+
+def showSources(fileName):
+    # Converts json format data into a python list & displays the sources
+    with open(fileName, 'r') as f:
+        # Shows details about the sources, and (if chosen) shows further details about a specific result
+        results = json.load(f)
+        sources = results["sources"]
+
+        source_list = []
+
+        for item in sources[:5]:
+            source_list.append(item['name'])
+
+        num = 1
+        formatted_sources = []
+        for i in range(0, len(source_list)):
+            formatted_source = f"{num}. {source_list[i]}"
+            formatted_sources.append(formatted_source)
+            num += 1
+
+        # GUI starts here
+        for widget in root.winfo_children():
+            widget.destroy()
+
+        label = tk.Label(root, text="Choose one Source from the below menu to view more details:", font=("Arial", 14))
+        label.pack(pady=10)
+
+        selected_item = tk.IntVar()
+        selected_item.set(1)  # Default to the first option
+
+        for i, source in enumerate(formatted_sources, 1):
+            rbb = tk.Radiobutton(root, text=source, variable=selected_item, value=i, font=("Arial", 12))
+            rbb.pack(anchor=tk.W, padx=20)
+
+        submit_button = tk.Button(root, text="Next", font=("Arial", 12), command=lambda: SourceDetails(selected_item.get(), sources))
+        submit_button.pack(pady=10)
+
+def SourceDetails(choice, sources):
+    # Handle the selected number and show details
+    result = sources[choice - 1]
+
+    for widget in root.winfo_children():
+        widget.destroy()
+
+    label = tk.Label(root, text=f"Source Name: {result['name']}", font=("Arial", 14), wraplength=500)
+    label.pack(pady=10)
+    label = tk.Label(root, text=f"Country: {result['country']}", font=("Arial", 12), wraplength=500)
+    label.pack(pady=10)
+    label = tk.Label(root, text=f"Description: {result['description']}", font=("Arial", 10), wraplength=500)
+    label.pack(pady=10)
+    label = tk.Label(root, text=f"URL: {result['url']}", font=("Arial", 12), wraplength=500)
+    label.pack(pady=10)
+    label = tk.Label(root, text=f"Category: {result['category']}", font=("Arial", 12), wraplength=500)
+    label.pack(pady=10)
+    label = tk.Label(root, text=f"Language: {result['language']}", font=("Arial", 12), wraplength=500)
+    label.pack(pady=10)
+
+    quit_button = tk.Button(root, text="Quit", font=("Arial", 12), command=lambda: submit_choice(cs, "Quit", 0))
+    quit_button.pack(pady=10)
+
 
 def submit_name(cs):
     name = entry.get()
@@ -43,12 +195,21 @@ def submit_choice(cs, choice, cases):
         display_SecondMenu(choice) # moves from main menu to what the user chooses
     if cases == 2:
         Handel_Headline(choice) # moves to which option the user chose under Headlines
-    if cases == 3: # when user search by keyword
+    if cases == 4:
+        HandelSource(choice)
+    
+def final_Submit(type,choice,cs,woord):
+    if woord:
         keyword = choice.get()
         keyword = KeywordFormat(keyword)
         cs.sendall(keyword.encode('ascii'))
-    if cases == 4:
-        HandelSource(choice)
+    else:
+        cs.sendall(choice.encode('ascii'))
+    file = cs.recv(1024).decode('ascii')
+    if type == "Headline":
+        showHeadlines(file)
+    elif type == "Source":
+        showSources(file)
 
 def display_SecondMenu(Menu):
     for widget in root.winfo_children():
@@ -94,17 +255,17 @@ def KeywordFormat(input):
 def Handel_Headline(choice):
                                                          #keyword option
     if choice == "Search by keywords":
+        for widget in root.winfo_children():
+            widget.destroy()
         label = tk.Label(root, text="Please enter what you want to search for:", font=("Arial", 14))
         label.pack(pady=10)
 
         word = tk.Entry(root, font=("Arial", 12))
         word.pack(pady=5)
 
-        search_button = tk.Button(root, text="Search", font=("Arial", 12), command=lambda: submit_choice(cs,word,3))
+        search_button = tk.Button(root, text="Search", font=("Arial", 12), command=lambda: final_Submit("Headline",word,cs,True))
         search_button.pack(pady=10)
 
-        back_button = tk.Button(root, text="Go Back", font=("Arial", 12), command=lambda: display_SecondMenu("Search Headlines"))
-        back_button.pack(pady=10)
                                                          #category option
     if choice == "Search by category":
         for widget in root.winfo_children():
@@ -121,11 +282,8 @@ def Handel_Headline(choice):
             rbb = tk.Radiobutton(root, text=choice, variable=selected_item, value=choice, font=("Arial", 12))
             rbb.pack(anchor=tk.W, padx=20)
 
-        submit_button = tk.Button(root, text="Submit", font=("Arial", 12), command=lambda: submit_choice(cs, selected_item.get(),4))
+        submit_button = tk.Button(root, text="Submit", font=("Arial", 12), command=lambda: final_Submit("Headline",selected_item.get(),cs,False))
         submit_button.pack(pady=10)
-                                                    #back button
-        back_button = tk.Button(root, text="Go Back", font=("Arial", 12), command=lambda: display_SecondMenu("Search Headlines"))
-        back_button.pack(pady=10)
                                                             # country optin
     if choice == "Search by country":
         for widget in root.winfo_children():
@@ -142,16 +300,15 @@ def Handel_Headline(choice):
             rbb = tk.Radiobutton(root, text=choice, variable=selected_item, value=choice, font=("Arial", 12))
             rbb.pack(anchor=tk.W, padx=20)
 
-        submit_button = tk.Button(root, text="Submit", font=("Arial", 12), command=lambda: submit_choice(cs, selected_item.get(),4))
+        submit_button = tk.Button(root, text="Submit", font=("Arial", 12), command=lambda: final_Submit("Headline",selected_item.get(),cs,False))
         submit_button.pack(pady=10)
 
-        back_button = tk.Button(root, text="Go Back", font=("Arial", 12), command=lambda: display_SecondMenu("Search Headlines"))
-        back_button.pack(pady=10)
                                                             #List all new headlines option
     if choice == "List all new headlines":
          for widget in root.winfo_children():
             widget.destroy()
-            #++++++++++++++++++++++ view the news ++++++++++++++++++++
+            final_Submit("Headline",choice,cs,False)
+
     if choice == "Back to main menu":
         submit_choice(cs,choice,0)
         display_MainMenu()
@@ -173,10 +330,8 @@ def HandelSource(choice):
             rbb = tk.Radiobutton(root, text=choice, variable=selected_item, value=choice, font=("Arial", 12))
             rbb.pack(anchor=tk.W, padx=20)
 
-        submit_button = tk.Button(root, text="Submit", font=("Arial", 12), command=lambda: submit_choice(cs, selected_item.get(),4))
+        submit_button = tk.Button(root, text="Submit", font=("Arial", 12), command=lambda: final_Submit("Source",selected_item.get(),cs,False))
         submit_button.pack(pady=10)
-        back_button = tk.Button(root, text="Go Back", font=("Arial", 12), command=lambda: display_SecondMenu("List of Sources"))
-        back_button.pack(pady=10)
                                                 # country option
     if choice == "Search by country":
         for widget in root.winfo_children():
@@ -193,11 +348,9 @@ def HandelSource(choice):
             rbb = tk.Radiobutton(root, text=choice, variable=selected_item, value=choice, font=("Arial", 12))
             rbb.pack(anchor=tk.W, padx=20)
 
-        submit_button = tk.Button(root, text="Submit", font=("Arial", 12), command=lambda: submit_choice(cs, selected_item.get(),4))
+        submit_button = tk.Button(root, text="Submit", font=("Arial", 12), command=lambda: final_Submit("Source",selected_item.get(),cs,False))
         submit_button.pack(pady=10)
 
-        back_button = tk.Button(root, text="Go Back", font=("Arial", 12), command=lambda: display_SecondMenu("List of Sources"))
-        back_button.pack(pady=10)
                                                     # Language option
     if choice == "Search by language":
         for widget in root.winfo_children():
@@ -214,16 +367,14 @@ def HandelSource(choice):
             rbb = tk.Radiobutton(root, text=choice, variable=selected_item, value=choice, font=("Arial", 12))
             rbb.pack(anchor=tk.W, padx=20)
 
-        submit_button = tk.Button(root, text="Submit", font=("Arial", 12), command=lambda: submit_choice(cs, selected_item.get(),4))
+        submit_button = tk.Button(root, text="Submit", font=("Arial", 12), command=lambda: final_Submit("Source",selected_item.get(),cs,False))
         submit_button.pack(pady=10)
-
-        back_button = tk.Button(root, text="Go Back", font=("Arial", 12), command=lambda: display_SecondMenu("List of Sources"))
-        back_button.pack(pady=10)
 
     if choice == "List all":
          for widget in root.winfo_children():
             widget.destroy()
-            #++++++++++++++++++++++ view the news ++++++++++++++++++++
+            final_Submit("Source",choice,cs,None)
+
     if choice == "Back to main menu":
         submit_choice(cs,choice,0)
         display_MainMenu()
@@ -235,7 +386,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as cs:
     root = tk.Tk()
     root.title("Insert Your Name")
     root.geometry("600x500")
-    root.resizable(False, False)
+    root.resizable(True, True)
 
     # Create and place the label
     label = tk.Label(root, text="Please enter your name:", font=("Arial", 14))
