@@ -237,6 +237,8 @@ def final_Submit(type,choice,cs,woord):
     if woord == "language":
         shortChoice = Shortcut(choice,"langugae")
         cs.sendall(shortChoice.encode('ascii'))
+    if woord == "category":
+        cs.sendall(choice.encode('ascii'))
     file = cs.recv(1024).decode('ascii')
     if type == "Headline":
         showHeadlines(file)
@@ -314,7 +316,7 @@ def Handel_Headline(choice):
             rbb = tk.Radiobutton(root, text=choice, variable=selected_item, value=choice, font=("Arial", 12))
             rbb.pack(anchor=tk.W, padx=20)
 
-        submit_button = tk.Button(root, text="Submit", font=("Arial", 12), command=lambda: final_Submit("Headline",selected_item.get(),cs,None))
+        submit_button = tk.Button(root, text="Submit", font=("Arial", 12), command=lambda: final_Submit("Headline",selected_item.get(),cs,"category"))
         submit_button.pack(pady=10)
                                                             # country optin
     if choice == "Search by country":
@@ -362,7 +364,7 @@ def HandelSource(choice):
             rbb = tk.Radiobutton(root, text=choice, variable=selected_item, value=choice, font=("Arial", 12))
             rbb.pack(anchor=tk.W, padx=20)
 
-        submit_button = tk.Button(root, text="Submit", font=("Arial", 12), command=lambda: final_Submit("Source",selected_item.get(),cs,False))
+        submit_button = tk.Button(root, text="Submit", font=("Arial", 12), command=lambda: final_Submit("Source",selected_item.get(),cs,"category"))
         submit_button.pack(pady=10)
                                                 # country option
     if choice == "Search by country":

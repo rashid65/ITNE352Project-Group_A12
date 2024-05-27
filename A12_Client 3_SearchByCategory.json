@@ -1,0 +1,201 @@
+{
+    "status": "ok",
+    "totalResults": 999,
+    "articles": [
+        {
+            "source": {
+                "id": "google-news",
+                "name": "Google News"
+            },
+            "author": "\u0627\u0644\u062c\u0631\u064a\u062f\u0629",
+            "title": "\u0627\u0644\u0647\u0627\u062a\u0641 \u0627\u0644\u0623\u0642\u0648\u0649 \u0641\u064a \u0627\u0644\u0641\u0626\u0629 \u0627\u0644\u0645\u062a\u0648\u0633\u0637\u0629.. \u0645\u0648\u0627\u0635\u0641\u0627\u062a \u0647\u0627\u062a\u0641 Vivo Y200 Pro \u0627\u0644\u062c\u062f\u064a\u062f \u0643\u0644\u064a\u0627\u064b - \u0627\u0644\u062c\u0631\u064a\u062f\u0629",
+            "description": null,
+            "url": "https://news.google.com/rss/articles/CBMi5AFodHRwczovL2Jsb2cuamFyaWRhLm9ubC81ODMyMy8lRDglQTclRDklODQlRDklODclRDglQTclRDglQUElRDklODEtJUQ4JUE3JUQ5JTg0JUQ4JUEzJUQ5JTgyJUQ5JTg4JUQ5JTg5LSVEOSU4MSVEOSU4QS0lRDglQTclRDklODQlRDklODElRDglQTYlRDglQTktJUQ4JUE3JUQ5JTg0JUQ5JTg1JUQ4JUFBJUQ5JTg4JUQ4JUIzJUQ4JUI3JUQ4JUE5LSVEOSU4NSVEOSU4OCVEOCVBNyVEOCVCNSVEOSU4MS_SAQA?oc=5",
+            "urlToImage": null,
+            "publishedAt": "2024-05-26T18:18:18Z",
+            "content": null
+        },
+        {
+            "source": {
+                "id": "google-news",
+                "name": "Google News"
+            },
+            "author": "Yahoo Canada Finance",
+            "title": "iPhone users may get AI-generated emoji and more app customization than ever with iOS 18 - Yahoo Canada Finance",
+            "description": null,
+            "url": "https://news.google.com/rss/articles/CBMiiQFodHRwczovL2NhLmZpbmFuY2UueWFob28uY29tL25ld3MvaXBob25lLXVzZXJzLW1heS1nZXQtYWktZ2VuZXJhdGVkLWVtb2ppLWFuZC1tb3JlLWFwcC1jdXN0b21pemF0aW9uLXRoYW4tZXZlci13aXRoLWlvcy0xOC0xODEyMTU2NjMuaHRtbNIBAA?oc=5",
+            "urlToImage": null,
+            "publishedAt": "2024-05-26T18:12:15Z",
+            "content": null
+        },
+        {
+            "source": {
+                "id": "google-news",
+                "name": "Google News"
+            },
+            "author": "Andro4all",
+            "title": "Xiaomi 14 Ultra vs Samsung Galaxy S24 Ultra: \u00bfcu\u00e1l es mejor? - Andro4all",
+            "description": null,
+            "url": "https://news.google.com/rss/articles/CBMiiQFodHRwczovL3d3dy5sYXZhbmd1YXJkaWEuY29tL2FuZHJvNGFsbC9tb3ZpbGVzL2NvbXBhcmF0aXZhLXhpYW9taS0xNC11bHRyYS12cy1zYW1zdW5nLWdhbGF4eS1zMjQtdWx0cmEtZGlmZXJlbmNpYXMteS1jdWFsLWVzLW1lam9yLWNvbXByYdIBAA?oc=5",
+            "urlToImage": null,
+            "publishedAt": "2024-05-26T18:02:26Z",
+            "content": null
+        },
+        {
+            "source": {
+                "id": "google-news",
+                "name": "Google News"
+            },
+            "author": "Cointribune",
+            "title": "Ces 3 cryptos pourraient exploser avec l'approbation des ETFs Ethereum ! - Cointribune",
+            "description": null,
+            "url": "https://news.google.com/rss/articles/CBMiYmh0dHBzOi8vd3d3LmNvaW50cmlidW5lLmNvbS9jZXMtMy1jcnlwdG9zLXBvdXJyYWllbnQtZXhwbG9zZXItYXZlYy1sYXBwcm9iYXRpb24tZGVzLWV0ZnMtZXRoZXJldW0v0gEA?oc=5",
+            "urlToImage": null,
+            "publishedAt": "2024-05-26T18:00:00Z",
+            "content": null
+        },
+        {
+            "source": {
+                "id": "google-news",
+                "name": "Google News"
+            },
+            "author": "O Antagonista",
+            "title": "Grandes empresas como Amazon e Tesla demitem funcion\u00e1rios - O Antagonista",
+            "description": null,
+            "url": "https://news.google.com/rss/articles/CBMiXGh0dHBzOi8vb2FudGFnb25pc3RhLmNvbS5ici9tdW5kby9ncmFuZGVzLWVtcHJlc2FzLWNvbW8tYW1hem9uLWUtdGVzbGEtZGVtaXRlbS1mdW5jaW9uYXJpb3Mv0gEA?oc=5",
+            "urlToImage": null,
+            "publishedAt": "2024-05-26T17:50:02Z",
+            "content": null
+        },
+        {
+            "source": {
+                "id": "google-news",
+                "name": "Google News"
+            },
+            "author": "El Universo",
+            "title": "Rescatan a hombre secuestrado hace cuatro d\u00edas en una panader\u00eda, en Quevedo - El Universo",
+            "description": null,
+            "url": "https://news.google.com/rss/articles/CBMifmh0dHBzOi8vd3d3LmVsdW5pdmVyc28uY29tL25vdGljaWFzL3NlZ3VyaWRhZC9yZXNjYXRhbi1hLWhvbWJyZS1zZWN1ZXN0cmFkby1oYWNlLWN1YXRyby1kaWFzLWVuLXVuYS1wYW5hZGVyaWEtZW4tcXVldmVkby1ub3RhL9IBjQFodHRwczovL3d3dy5lbHVuaXZlcnNvLmNvbS9ub3RpY2lhcy9zZWd1cmlkYWQvcmVzY2F0YW4tYS1ob21icmUtc2VjdWVzdHJhZG8taGFjZS1jdWF0cm8tZGlhcy1lbi11bmEtcGFuYWRlcmlhLWVuLXF1ZXZlZG8tbm90YS8_b3V0cHV0VHlwZT1hbXA?oc=5",
+            "urlToImage": null,
+            "publishedAt": "2024-05-26T17:45:00Z",
+            "content": null
+        },
+        {
+            "source": {
+                "id": "google-news",
+                "name": "Google News"
+            },
+            "author": "\u062c\u0631\u064a\u062f\u0629 \u0645\u0635\u0631\u0646\u0627",
+            "title": "\u0622\u064a\u0641\u0648\u0646 13 \u0645\u0646 \u0623\u0631\u062e\u0635 \u0627\u0644\u062e\u064a\u0627\u0631\u0627\u062a \u0628\u0641\u0636\u0644 \u0639\u0631\u0648\u0636 \u0623\u0633\u0648\u0627\u0642 \u0627\u0643\u0633\u062a\u0631\u0627 \u0627\u0644\u0633\u0639\u0648\u062f\u064a\u0629 - \u062c\u0631\u064a\u062f\u0629 \u0645\u0635\u0631\u0646\u0627",
+            "description": null,
+            "url": "https://news.google.com/rss/articles/CBMi3QFodHRwczovL21lc3JlbmEuY29tLzg0NzIvJUQ4JUEyJUQ5JThBJUQ5JTgxJUQ5JTg4JUQ5JTg2LTEzLSVEOSU4NSVEOSU4Ni0lRDglQTMlRDglQjElRDglQUUlRDglQjUtJUQ4JUE3JUQ5JTg0JUQ4JUFFJUQ5JThBJUQ4JUE3JUQ4JUIxJUQ4JUE3JUQ4JUFBLSVEOCVBOCVEOSU4MSVEOCVCNiVEOSU4NC0lRDglQjklRDglQjElRDklODglRDglQjYtJUQ4JUEzJUQ4JUIzJUQ5JTg4JUQ4JUE3L9IBAA?oc=5",
+            "urlToImage": null,
+            "publishedAt": "2024-05-26T17:42:51Z",
+            "content": null
+        },
+        {
+            "source": {
+                "id": "google-news",
+                "name": "Google News"
+            },
+            "author": "EL TIEMPO",
+            "title": "CityNoticias 26 de mayo: Mujer robaba celulares en TransMilenio disfrazada de enfermera - EL TIEMPO",
+            "description": null,
+            "url": "https://news.google.com/rss/articles/CCAiC1dURjBXcVRBcUNrmAEB?oc=5",
+            "urlToImage": null,
+            "publishedAt": "2024-05-26T17:42:40Z",
+            "content": null
+        },
+        {
+            "source": {
+                "id": "google-news",
+                "name": "Google News"
+            },
+            "author": "Kronen Zeitung",
+            "title": "Notruf am Berg - Handy-App f\u00fchrte Wanderer in gef\u00e4hrliche Gefilde | krone.at - Kronen Zeitung",
+            "description": null,
+            "url": "https://news.google.com/rss/articles/CBMiHGh0dHBzOi8vd3d3Lmtyb25lLmF0LzMzOTE4MTbSAQA?oc=5",
+            "urlToImage": null,
+            "publishedAt": "2024-05-26T17:40:00Z",
+            "content": null
+        },
+        {
+            "source": {
+                "id": "google-news",
+                "name": "Google News"
+            },
+            "author": "Jawal Apk Android",
+            "title": "\u0627\u0644\u062c\u062f\u064a\u062f \u0645\u0646 \u0647\u0648\u0646\u0631 .. \u0627\u062d\u0635\u0644 \u0639\u0644\u0649 \u062c\u0648\u0627\u0644 Honor Magic V2 \u0628\u0645\u0648\u0627\u0635\u0641\u0627\u062a \u062e\u064a\u0627\u0644\u064a\u0629 \u0648\u0625\u0645\u0643\u0627\u0646\u064a\u0627\u062a \u062e\u0627\u0631\u0642\u0629 - Jawal Apk Android",
+            "description": null,
+            "url": "https://news.google.com/rss/articles/CBMi2AFodHRwczovL2phd2FsYXBrLmFwcC9ibG9nLyVEOCVBNyVEOSU4NCVEOCVBQyVEOCVBRiVEOSU4QSVEOCVBRi0lRDklODUlRDklODYtJUQ5JTg3JUQ5JTg4JUQ5JTg2JUQ4JUIxLSVEOCVBNyVEOCVBRCVEOCVCNSVEOSU4NC0lRDglQjklRDklODQlRDklODktJUQ4JUFDJUQ5JTg4JUQ4JUE3JUQ5JTg0LWhvbm9yLW1hZ2ljLXYyLSVEOCVBOCVEOSU4NSVEOSU4OCVEOCVBNyVEOCVCNS_SAQA?oc=5",
+            "urlToImage": null,
+            "publishedAt": "2024-05-26T17:30:28Z",
+            "content": null
+        },
+        {
+            "source": {
+                "id": "google-news",
+                "name": "Google News"
+            },
+            "author": "Sky News Arabia \u0633\u0643\u0627\u064a \u0646\u064a\u0648\u0632 \u0639\u0631\u0628\u064a\u0629",
+            "title": "\u0634\u0643\u0644 \u0627\u0644\u062d\u0631\u0628 \u0627\u0644\u062c\u062f\u064a\u062f.. \u0645\u0633\u064a\u0631\u0627\u062a \u0628\u0633\u064a\u0637\u0629 \u0648\u0645\u0634\u0627\u0643\u0644 \u0645\u0639\u0642\u062f\u0629 - Sky News Arabia \u0633\u0643\u0627\u064a \u0646\u064a\u0648\u0632 \u0639\u0631\u0628\u064a\u0629",
+            "description": null,
+            "url": "https://news.google.com/rss/articles/CBMiigJodHRwczovL3d3dy5za3luZXdzYXJhYmlhLmNvbS93b3JsZC8xNzE2OTYyLSVEOCVCNCVEOSU4MyVEOSU4NC0lRDglQTclRDklODQlRDglQUQlRDglQjElRDglQTgtJUQ4JUE3JUQ5JTg0JUQ4JUFDJUQ4JUFGJUQ5JThBJUQ4JUFGLSVEOSU4NSVEOCVCMyVEOSU4QSVEOCVCMSVEOCVBNyVEOCVBQS0lRDglQTglRDglQjMlRDklOEElRDglQjclRDglQTktJUQ5JTg4JUQ5JTg1JUQ4JUI0JUQ4JUE3JUQ5JTgzJUQ5JTg0LSVEOSU4NSVEOCVCOSVEOSU4MiVEOCVBRiVEOCVBOdIBjgJodHRwczovL3d3dy5za3luZXdzYXJhYmlhLmNvbS9hbXAvd29ybGQvMTcxNjk2Mi0lRDglQjQlRDklODMlRDklODQtJUQ4JUE3JUQ5JTg0JUQ4JUFEJUQ4JUIxJUQ4JUE4LSVEOCVBNyVEOSU4NCVEOCVBQyVEOCVBRiVEOSU4QSVEOCVBRi0lRDklODUlRDglQjMlRDklOEElRDglQjElRDglQTclRDglQUEtJUQ4JUE4JUQ4JUIzJUQ5JThBJUQ4JUI3JUQ4JUE5LSVEOSU4OCVEOSU4NSVEOCVCNCVEOCVBNyVEOSU4MyVEOSU4NC0lRDklODUlRDglQjklRDklODIlRDglQUYlRDglQTk?oc=5",
+            "urlToImage": null,
+            "publishedAt": "2024-05-26T17:29:20Z",
+            "content": null
+        },
+        {
+            "source": {
+                "id": "google-news",
+                "name": "Google News"
+            },
+            "author": "Jawal Apk Android",
+            "title": "\u0627\u0644\u0622\u0646 \u0628\u0623\u0642\u0648\u0649 \u0627\u0644\u0645\u0648\u0627\u0635\u0641\u0627\u062a .. \u062a\u0639\u0631\u0641 \u0639\u0644\u0649 \u0645\u0632\u0627\u064a\u0627 \u0647\u0627\u062a\u0641 Infinix GT 10 Pro \u0627\u0644\u062c\u062f\u064a\u062f \u0648\u0633\u0639\u0631\u0647 - Jawal Apk Android",
+            "description": null,
+            "url": "https://news.google.com/rss/articles/CBMi2wFodHRwczovL2phd2FsYXBrLmFwcC9ibG9nLyVEOCVBNyVEOSU4NCVEOCVBMiVEOSU4Ni0lRDglQTglRDglQTMlRDklODIlRDklODglRDklODktJUQ4JUE3JUQ5JTg0JUQ5JTg1JUQ5JTg4JUQ4JUE3JUQ4JUI1JUQ5JTgxJUQ4JUE3JUQ4JUFBLSVEOCVBQSVEOCVCOSVEOCVCMSVEOSU4MS0lRDglQjklRDklODQlRDklODktJUQ5JTg1JUQ4JUIyJUQ4JUE3JUQ5JThBJUQ4JUE3LSVEOSU4Ny_SAQA?oc=5",
+            "urlToImage": null,
+            "publishedAt": "2024-05-26T17:20:28Z",
+            "content": null
+        },
+        {
+            "source": {
+                "id": "google-news",
+                "name": "Google News"
+            },
+            "author": "SMARTmania.cz",
+            "title": "Takhle si objedn\u00e1te Galaxy Ring! Samsungu utekl n\u00e1vod, jak vybrat spr\u00e1vn\u00fd prsten - SMARTmania.cz",
+            "description": null,
+            "url": "https://news.google.com/rss/articles/CBMiZWh0dHBzOi8vc21hcnRtYW5pYS5jei90YWtobGUtc2ktb2JqZWRuYXRlLWdhbGF4eS1yaW5nLXNhbXN1bmd1LXV0ZWtsLW5hdm9kLWphay12eWJyYXQtc3ByYXZueS1wcnN0ZW4v0gEA?oc=5",
+            "urlToImage": null,
+            "publishedAt": "2024-05-26T17:15:00Z",
+            "content": null
+        },
+        {
+            "source": {
+                "id": "google-news",
+                "name": "Google News"
+            },
+            "author": "infobae",
+            "title": "C\u00f3mo pagar desde mi celular si no tengo dinero en efectivo - infobae",
+            "description": null,
+            "url": "https://news.google.com/rss/articles/CBMiZGh0dHBzOi8vd3d3LmluZm9iYWUuY29tL3RlY25vLzIwMjQvMDUvMjYvY29tby1wYWdhci1kZXNkZS1taS1jZWx1bGFyLXNpLW5vLXRlbmdvLWRpbmVyby1lbi1lZmVjdGl2by_SAXhodHRwczovL3d3dy5pbmZvYmFlLmNvbS90ZWNuby8yMDI0LzA1LzI2L2NvbW8tcGFnYXItZGVzZGUtbWktY2VsdWxhci1zaS1uby10ZW5nby1kaW5lcm8tZW4tZWZlY3Rpdm8vP291dHB1dFR5cGU9YW1wLXR5cGU?oc=5",
+            "urlToImage": null,
+            "publishedAt": "2024-05-26T17:13:00Z",
+            "content": null
+        },
+        {
+            "source": {
+                "id": "google-news",
+                "name": "Google News"
+            },
+            "author": "jeuxvideo.com",
+            "title": "Une dur\u00e9e de vie garantie de 2 si\u00e8cles. C'est ce que propose cette cl\u00e9 USB vendue moins de 30 euros. Mais il ne faut surtout pas l'acheter - jeuxvideo.com",
+            "description": null,
+            "url": "https://news.google.com/rss/articles/CBMiswFodHRwczovL3d3dy5qZXV4dmlkZW8uY29tL25ld3MvMTg4NzgzMC91bmUtZHVyZWUtZGUtdmllLWdhcmFudGllLWRlLTItc2llY2xlcy1jLWVzdC1jZS1xdWUtcHJvcG9zZS1jZXR0ZS1jbGUtdXNiLXZlbmR1ZS1tb2lucy1kZS0zMC1ldXJvcy1tYWlzLWlsLW5lLWZhdXQtc3VydG91dC1wYXMtbC1hY2hldGVyLmh0bdIBAA?oc=5",
+            "urlToImage": null,
+            "publishedAt": "2024-05-26T17:10:03Z",
+            "content": null
+        }
+    ]
+}
