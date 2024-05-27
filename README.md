@@ -111,7 +111,7 @@ After selecting a headline from the search results, users can view detailed info
     - Sourcelanguage: Retrieves sources based on a specific language.
    
 ### Acknowledgements:
-
+We would want to express my sincere appreciation to our doctor for all of his guidance and motivation during this course. Their advice and guidance have been invaluable. Their commitment to supporting academic achievement and development is incredibly admirable.
 ### conclusion:
 This project offers a server-client architecture that utilizes tkinter library to interact with a GUI to request headlines and sources from NewsAPI. It handles multiple connections by dedicating a thread for each client. The client can choose options such as searching headlines by keywords, category, or country, listing all headlines, or accessing details about news sources. The server rocesses these requests and detches relevant results from NewsAPI and sends it to the client
 
