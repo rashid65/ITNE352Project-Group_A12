@@ -292,7 +292,7 @@ def Handel_Headline(choice):
         label = tk.Label(root, text="Choose one option from the below menu:", font=("Arial", 14))
         label.pack(pady=10)
 
-        choices = ["au","nz","ca","ae","sa","gb","us","eg","ma"]
+        choices = ["Australia","Newzealand","Canada","United Arab Emirates","Saudi Arabia","United Kingdom","United States of America","Egypt","Morocco"]
         selected_item = tk.StringVar()
         selected_item.set(choices[0])
 
@@ -340,7 +340,7 @@ def HandelSource(choice):
         label = tk.Label(root, text="Choose one option from the below menu:", font=("Arial", 14))
         label.pack(pady=10)
 
-        choices = ["au","nz","ca","ae","sa","gb","us","eg","ma"]
+        choices = ["australia","Newzealand","Canada","United Arab Emirates","Saudi Arabia","United Kingdom","United States of America","Egypt","Morocco"]
         selected_item = tk.StringVar()
         selected_item.set(choices[0])
 
@@ -359,7 +359,7 @@ def HandelSource(choice):
         label = tk.Label(root, text="Choose one option from the below menu:", font=("Arial", 14))
         label.pack(pady=10)
 
-        choices = ["ar","en"]
+        choices = ["Arabic","English"]
         selected_item = tk.StringVar()
         selected_item.set(choices[0])
 
@@ -384,7 +384,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as cs:
     cs.connect(("127.0.0.1", 49999))
     # Create the main window
     root = tk.Tk()
-    root.title("Insert Your Name")
+    root.title("News API")
     root.geometry("600x500")
     root.resizable(True, True)
 
