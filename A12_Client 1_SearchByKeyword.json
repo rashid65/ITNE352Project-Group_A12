@@ -1,7 +1,20 @@
 {
     "status": "ok",
-    "totalResults": 6,
+    "totalResults": 8,
     "articles": [
+        {
+            "source": {
+                "id": "bild",
+                "name": "Bild"
+            },
+            "author": "Janek K\u00f6nau, J\u00f6rn Ehlert",
+            "title": "Ekel-Alarm nach Unwetter in Th\u00fcringen: F\u00e4kalien fluten Freibad in Bad Berka | Regional",
+            "description": "Ein Unwetter mit starkem Regen hatte das Freibad am Abend \u00fcberflutet. Auch die Toiletten standen unter Wasser und F\u00e4kalien verbreiteten sich.",
+            "url": "https://www.bild.de/regional/thueringen/thueringen-faekalien-im-freibad-bad-berka-ausgetreten-66532a78472ec65376a101f0",
+            "urlToImage": "https://images.bild.de/66532a78472ec65376a101f0/30b302081dca5b84e54bedc8e925e864,d877fbd1?w=1280",
+            "publishedAt": "2024-05-26T17:41:36Z",
+            "content": "Bad Berka (Th\u00fcringen) - Nach dem Regen kam der Ekel\u00a0\r\nUm kurz nach 20 Uhr kam es am Samstagabend zu einem Unwetter mit Starkregen \u00fcber \r\nTh\u00fcringen. Unter anderem waren die Gemeinden Neusaalborn, Blan\u2026 [+1361 chars]"
+        },
         {
             "source": {
                 "id": "les-echos",
@@ -14,6 +27,19 @@
             "urlToImage": "https://media.lesechos.com/api/v1/images/view/66530124e4a90961ed0768cb/1280x720/01101326344003-web-tete.jpg",
             "publishedAt": "2024-05-26T09:30:37Z",
             "content": "Avec la nouvelle r\u00e9forme de l'assurance-ch\u00f4mage d\u00e9voil\u00e9e ce dimanche, on peut parier sans risque qu'Emmanuel Macron est all\u00e9 au bout d'une d\u00e9marche commenc\u00e9e sit\u00f4t \u00e9lu, de fa\u00e7on mod\u00e9r\u00e9e et plut\u00f4t pro\u2026 [+3493 chars]"
+        },
+        {
+            "source": {
+                "id": "le-monde",
+                "name": "Le Monde"
+            },
+            "author": "Thomas Wieder, Virginie Malingre",
+            "title": "Macron and Scholz: Two weakened leaders face a Europe in turmoil",
+            "description": "The French president heads to Germany on Sunday for a two-day state visit, at a time when relations between the European Union's two economic and political powerhouses are in decline.",
+            "url": "https://www.lemonde.fr/en/international/article/2024/05/26/macron-and-scholz-two-weakened-governments-face-a-europe-in-turmoil_6672695_4.html",
+            "urlToImage": "https://img.lemde.fr/2024/05/24/0/1/5998/3999/1440/960/60/0/7d46a31_1716566094147-andia-abc-871181-007.jpg",
+            "publishedAt": "2024-05-26T06:00:00Z",
+            "content": "Emmanuel Macron and German Chancellor Olaf Scholz, accompanied by their wives, walk through the staircase district at Blankenese, on the Elbe, in Hamburg, Germany, on October 10, 2023. NIETFELD KAY/D\u2026 [+2729 chars]"
         },
         {
             "source": {
